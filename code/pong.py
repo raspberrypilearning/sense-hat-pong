@@ -1,11 +1,18 @@
 from sense_hat import SenseHat
+import curses
 import threading
 from time import sleep
-import curses
+
 
 ##Set up the sense hat
 sense = SenseHat()
 sense.clear(0,0,0)
+
+## Set up curses
+screen = curses.initscr()
+screen.keypad(True)
+curses.cbreak()
+curses.noecho()
 
 ##initialise bat position
 y = 4
@@ -14,13 +21,9 @@ y = 4
 ball_position = [6,3]
 ball_speed = [-1,-1]
 
-## Set up curses
-screen = curses.initscr()
-screen.keypad(True)
-curses.cbreak()
-curses.noecho()
 
-def drawbat(y):
+
+def drawbat():
     '''Draw the bat about y'''
     sense.set_pixel(0,y,255,255,255)
     sense.set_pixel(0,y+1,255,255,255)
@@ -62,7 +65,7 @@ thread = threading.Thread(target=moveball)
 thread.start()
 
 while not game_over:
-    drawbat(y)
+    drawbat()
     key = screen.getch()
     sense.clear()
 
@@ -73,8 +76,6 @@ while not game_over:
     if key == curses.KEY_DOWN:
         if y < 6:
             y += 1
-
-    screen.clear()
 
 sense.show_message("You Lose", text_colour=(255,0,0))
 
