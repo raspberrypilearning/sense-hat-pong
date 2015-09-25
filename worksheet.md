@@ -484,6 +484,8 @@ curses.endwin()
 ```
 
 1. You're entire program should look like this:
+
+```python
 from time import sleep
 from sense_hat import SenseHat
 import curses
