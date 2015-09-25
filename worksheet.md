@@ -231,7 +231,8 @@ while not game_over:
     if key == curses.KEY_DOWN:
         if y < 6:
             y += 1
-
+```
+			
 1. Try and run the code again and see if your bat moves up and down, without crashing the program. When you're happy, just close the Terminal window to kill the program.
 
 ## Moving a ball
@@ -367,6 +368,7 @@ def moveball():
 1. Run the game, and you should see that you have a fairly easy version of pong to play.
 
 1. Your full code should currently look like this:
+
 ```python
 from sense_hat import SenseHat
 import curses
