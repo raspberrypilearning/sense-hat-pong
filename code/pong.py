@@ -4,7 +4,7 @@ import threading
 from time import sleep
 
 
-##Set up the sense hat
+##Set up the Sense HAT
 sense = SenseHat()
 sense.clear(0,0,0)
 
