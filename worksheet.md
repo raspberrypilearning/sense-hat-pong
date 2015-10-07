@@ -30,7 +30,7 @@ At the **top-left** corner, both x and y would have values of `0`
 
 ## Lighting up an LED
 
-Let's start our pong game by lighting up a single LED, and then a few more to create a bat.
+Let's start our Pong game by lighting up a single LED, and then a few more to create a bat.
 
 1. First you'll need to import the `sense_hat` library. Type the following into your `pong.py` text file:
 
@@ -179,7 +179,7 @@ Now you have drawn a bat, you need to be able to move it using the joystick on t
 			y += 1
 	```
 
-1. Open a new Terminal window and run the python code again. Try moving the joystick up and down **once** each. Now try moving the bat all the way up!
+1. Open a new Terminal window and run the Python code again. Try moving the joystick up once and down once. Now try moving the bat all the way up!
 
 1. You probably have an error message saying that `Y position must be between 0 and 7`. This is because your code has tried to illuminate an LED that wasn't there. If `y` is set to `0` then the `drawbat()` function will try to illuminate the LEDs at `-1`,`0` and `1`. If `y` is `7` it will try to illuminate LEDs at `6`,`7` and `8`. As there are no LEDs at 0 or 8, this causes the program to crash. This is easy to handle though. Edit your while loop so that it looks like this.
 
@@ -259,7 +259,7 @@ To get values out of a list, you can use the value's `index`. So if you wanted t
 		sense.set_pixel(ball_position[0],ball_position[1],0,0,255)
 	```
 
-This turns off the LED at the ball's position, then changes it's `x` and `y` position by it's horizontal and vertical speed. Then it illuminates the LED at the balls position in a blue colour.
+This turns off the LED at the ball's position, then changes its `x` and `y` position by its horizontal and vertical speed. Then it illuminates the LED at the ball's position in a blue colour.
 
 1. To see the ball being drawn, you'll need to call the function. For now you can call it in the `while` loop.
 
@@ -285,7 +285,7 @@ This turns off the LED at the ball's position, then changes it's `x` and `y` pos
 
 The first problem you should have noticed is that the ball tried to move off the LED matrix and you received the same error code as last time. This is fairly easy to fix.
 
-1. To bounce the ball, you need to change it's speed when it gets to the edge of the LED matrix. If the speed is `-1` in the `y` direction, for instance, and the ball is at the top edge of the screen, the speed needs to become `+1`
+1. To bounce the ball, you need to change its speed when it gets to the edge of the LED matrix. If the speed is `-1` in the `y` direction, for instance, and the ball is at the top edge of the screen, the speed needs to become `+1`
 
 1. If we were to write pseudocode for the algorithm, it would look something like:
 
@@ -315,7 +315,7 @@ The first problem you should have noticed is that the ball tried to move off the
 1. Run your code, and you should see the ball bounce off the edge as you move the joystick around. But as soon as it gets to the left edge, the game crashes again. You need code that handles a collision with the bat, and a collision with the left edge. To handle collision with the bat, you need to know that the ball has the same `y` coordinate as any of the LEDs that make up the bat. The pseudocode would look something like:
 
 	```
-	if the ball is near the right edge and it's y position is between the top and bottom of the bat.
+	if the ball is near the right edge and its y position is between the top and bottom of the bat.
 		reverse the x speed of the ball
 	```
 
@@ -367,7 +367,7 @@ The first problem you should have noticed is that the ball tried to move off the
 		sense.set_pixel(ball_position[0],ball_position[1],0,0,255)
 	```
 
-1. Run the game, and you should see that you have a fairly easy version of pong to play.
+1. Run the game, and you should see that you have a fairly easy version of Pong to play.
 
 1. Your full code should currently look like this:
 
@@ -485,7 +485,7 @@ To handle this you can use threads. Think of a thread as part of your program th
 	curses.endwin()
 	```
 
-1. You're entire program should look like this:
+1. Your entire program should look like this:
 
 	```python
 	from time import sleep
