@@ -26,7 +26,7 @@ We can do the same with the LEDs on the Sense HAT
 
 ![Coordinates](images/astro-pi-hat.png)
 
-At the **Top-Left** corner, both x and y would have values of `0`
+At the **top-left** corner, both x and y would have values of `0`
 
 ## Lighting up an LED
 
@@ -67,7 +67,7 @@ A single LED should now be on
 
 
 ##Making a bat
-1. Next we want to draw the rest of the bat, by illuminating the LED above and below the once that you currently have. To do this we're going to make a function. Select the `sense.set_pixel(0,y,255,255,255)` line and hold down **Ctrl** and then press the **x** key to cut the line. Now type the following.
+1. Next we want to draw the rest of the bat, by illuminating the LED above and below the once that you currently have. To do this we're going to make a function. Select the `sense.set_pixel(0,y,255,255,255)` line, hold down **Ctrl** and then press the **x** key to cut the line. Now type the following.
 
 	```python
 	def drawbat():
