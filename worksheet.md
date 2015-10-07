@@ -32,7 +32,7 @@ At the **top-left** corner, both x and y would have values of `0`
 
 Let's start our pong game by lighting up a single LED, and then a few more to create a bat.
 
-1. First you'll need to import the `sense_hat` library. Type the following into your `pong.py` text file.
+1. First you'll need to import the `sense_hat` library. Type the following into your `pong.py` text file:
 
 	```python
 	from sense_hat import SenseHat
@@ -425,7 +425,7 @@ The first problem you should have noticed is that the ball tried to move off the
 
 	```
 
-## Making the ball move on it's own.
+## Making the ball move on its own.
 
 1. The game is easy because the ball only moves when joystick is moved. You need to make the ball move independently of the joystick. This is tricky though, as the joystick events are being listened to in a `while` loop, that only cycles around once a joystick event is detected.
 
@@ -559,4 +559,4 @@ To handle this you can use threads. Think of a thread as part of your program th
 	curses.endwin()
 	```
 
-1. Well done - You've made a Pong clone for the Sense HAT.
+1. Well done! You've made a Pong clone for the Sense HAT.
