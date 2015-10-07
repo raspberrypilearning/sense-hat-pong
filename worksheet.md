@@ -67,7 +67,7 @@ A single LED should now be illuminated.
 
 
 ##Making a bat
-1. Next we want to draw the rest of the bat, by illuminating the LED above and below the one that you currently have. To do this, we're going to make a function. Select the `sense.set_pixel(0,y,255,255,255)` line, hold down **Ctrl** and then press the **x** key to cut the line. Now type the following.
+1. Next we want to draw the rest of the bat, by illuminating the LEDs immediately above and below the one that you have currently selected. To do this, we're going to make a function. Select the `sense.set_pixel(0,y,255,255,255)` line, hold down **Ctrl** and then press the **x** key to cut the line. Now type the following.
 
 	```python
 	def drawbat():
@@ -124,7 +124,7 @@ Three LEDs should be illuminated.
 ![Three LEDs](images/three-LED.png)
 
 ##Moving the bat
-Now you have drawn a bat, you need to be able to move it using the joystick on the Sense HAT. To do this, you will need the `curses` library, which makes it easy to capture keyboard input. (The joystick is the same as the cursor keys on the keyboard).
+Now you have drawn a bat, you need to be able to move it using the joystick on the Sense HAT. To do this, you will need the `curses` library, which makes it easy to capture keyboard input. (The joystick corresponds to the cursor keys on the keyboard).
 
 1. On the second line of your file, import the `curses` library, so the first two lines look like this.
 
@@ -181,7 +181,7 @@ Now you have drawn a bat, you need to be able to move it using the joystick on t
 
 1. Open a new Terminal window and run the Python code again. Try moving the joystick up once and down once. Now try moving the bat all the way up!
 
-1. You probably have an error message saying that `Y position must be between 0 and 7`. This is because your code has tried to illuminate an LED that wasn't there. If `y` is set to `0` then the `drawbat()` function will try to illuminate the LEDs at `-1`,`0` and `1`. If `y` is `7` it will try to illuminate LEDs at `6`,`7` and `8`. As there are no LEDs at 0 or 8, this causes the program to crash. This is easy to handle though. Edit your while loop so that it looks like this.
+1. You probably have an error message saying that `Y position must be between 0 and 7`. This is because your code has tried to illuminate an LED that wasn't there. If `y` is set to `0`, then the `drawbat()` function will try to illuminate the LEDs at `-1`,`0` and `1`. If `y` is `7`, it will try to illuminate LEDs at `6`,`7` and `8`. As there are no LEDs at `-1` or `8`, this causes the program to crash. This is easy to handle though. Edit your `while` loop so that it looks like this.
 
 	```python
 	while not game_over:
@@ -235,11 +235,11 @@ Now you have drawn a bat, you need to be able to move it using the joystick on t
 				y += 1
 	```
 			
-1. Try and run the code again and see if your bat moves up and down, without crashing the program. When you're happy, just close the Terminal window to kill the program.
+1. Try and run the code again and see if your bat moves up and down without crashing the program. When you're happy, just close the Terminal window to kill the program.
 
 ## Moving a ball
 
-1. Just like you did with the bat, you can draw a ball using a function, but first you need to give it some properties. The ball needs a starting position and a speed. You can use lists to store these numbers. Write the following two lines under the `y = 4` line in your `pong.py` file.
+1. Just as you did with the bat, you can draw a ball using a function, but first you need to give it some properties. The ball needs a starting position and a speed. You can use lists to store these numbers. Write the following two lines under the `y = 4` line in your `pong.py` file.
 
 
 	```python
@@ -247,7 +247,7 @@ Now you have drawn a bat, you need to be able to move it using the joystick on t
 	ball_speed = [-1,-1]
 	```
 
-To get values out of a list, you can use the value's `index`. So if you wanted the balls horizontal position, you could type `ball_position[0]`. If you wanted the balls vertical speed, you could type `ball_speed[1]`.
+To get values out of a list, you can use the value's `index`. So if you wanted the ball's horizontal position, you could type `ball_position[0]`. If you wanted the ball's vertical speed, you could type `ball_speed[1]`.
 
 1. Next you can create a function to draw and move the ball.
 
@@ -319,13 +319,13 @@ The first problem you should have noticed is that the ball tried to move off the
 		reverse the x speed of the ball
 	```
 
-1. Seeing if a variable is between two numbers is easy in Python. If you wanted to know if a variable `foo` was between `5` and `10` you could just ask if 5 is less than are equal to foo which is less than or equal to 10. This would look like:
+1. Seeing if a variable is between two numbers is easy in Python. If you wanted to know if a variable `foo` was between `5` and `10`, you could just ask if `5` is less than or equal to `foo` which is less than or equal to `10`:
 
 	```python
 	if 5 <= foo <= 10
 	```
 
-1. Alter you `moveball()` function so that it looks like this:
+1. Alter your `moveball()` function so that it looks like this:
 
 	```python
 	def moveball():
@@ -343,9 +343,9 @@ The first problem you should have noticed is that the ball tried to move off the
 		sense.set_pixel(ball_position[0],ball_position[1],0,0,255)
 	```
 
-1. Now run the program again, to see if it bounces (make sure to get the bat into position).
+1. Now run the program again, to see if the ball bounces (make sure to get the bat into position).
 
-1. The last part for this section, will be making the player lose, if the ball falls off the left edge of the matrix, as at the moment, the game just crashes. Firstly you'll need to make the `game_over` variable available to the function, and then change it to `True` if the ball hits the left edge.
+1. The last part for this section will be making the player lose if the ball falls off the left edge of the matrix: at the moment, the game just crashes. Firstly you'll need to make the `game_over` variable available to the function, and then change it to `True` if the ball hits the left edge.
 
 	```python
 	def moveball():
