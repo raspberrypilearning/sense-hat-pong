@@ -39,7 +39,7 @@ Let's start our pong game by lighting up a single LED, and then a few more to cr
 	sense = SenseHat()
 	```
 
-1. The bat will always be on the far left column of pixels, so it's `x` value will be `0`, but the `y` value will change as you move the bat up and down. Start by setting the `y` value to 4, by adding this line
+1. The bat will always be on the far left column of pixels, so its `x` value will always be `0`, but the `y` value will change as you move the bat up and down. Start by setting the `y` value to 4, by adding this line
 
 	```python
 	y = 4
@@ -53,7 +53,7 @@ Let's start our pong game by lighting up a single LED, and then a few more to cr
 
 1. The values `(0,y,255,255,255)` indicate the `x` and `y` position of the LED, and the colour of light it should emit. `255,255,255` is white.
 
-1. Save you file by holding down the **Ctrl** key and then pressing the **s** key.
+1. Save your file by holding down the **Ctrl** key and then pressing the **s** key.
 
 1. To run your file, switch over to the terminal window you opened earlier and type:
 
@@ -61,13 +61,13 @@ Let's start our pong game by lighting up a single LED, and then a few more to cr
 	python3 pong.py
 	```
 
-A single LED should now be on
+A single LED should now be illuminated. 
 
 ![Single LED](images/single-LED.png)
 
 
 ##Making a bat
-1. Next we want to draw the rest of the bat, by illuminating the LED above and below the once that you currently have. To do this we're going to make a function. Select the `sense.set_pixel(0,y,255,255,255)` line, hold down **Ctrl** and then press the **x** key to cut the line. Now type the following.
+1. Next we want to draw the rest of the bat, by illuminating the LED above and below the one that you currently have. To do this, we're going to make a function. Select the `sense.set_pixel(0,y,255,255,255)` line, hold down **Ctrl** and then press the **x** key to cut the line. Now type the following.
 
 	```python
 	def drawbat():
@@ -119,12 +119,12 @@ A single LED should now be on
 	python3 pong.py
 	```
 
-Three LEDs should be illuminated
+Three LEDs should be illuminated.
 
 ![Three LEDs](images/three-LED.png)
 
 ##Moving the bat
-Now you have drawn a bat, you need to be able to move it using the joystick on the Sense HAT. To do this you will need the `curses` library, which makes it easy to capture keyboard input. (The joystick is the same as the cursor keys on the keyboard.)
+Now you have drawn a bat, you need to be able to move it using the joystick on the Sense HAT. To do this, you will need the `curses` library, which makes it easy to capture keyboard input. (The joystick is the same as the cursor keys on the keyboard).
 
 1. On the second line of your file, import the `curses` library, so the first two lines look like this.
 
@@ -162,7 +162,7 @@ Now you have drawn a bat, you need to be able to move it using the joystick on t
 	python3 pong.py
 	```
 
-You should see the bat flickering on and off. Your terminal window might look a little strange as well. This is just curses taking over the screen. To kill the program, just click on the **X** in the top right corner of the Terminal window.
+	You should see the bat flickering on and off. Your terminal window might look a little strange as well. This is just curses taking over the screen. To kill the program, just click on the **X** in the top right corner of the Terminal window.
 
 1. Now you have a loop, you can use it to find out what keys the player is pressing. To do this you store the players key press as a variable called `key` and use the `screen.getch()` to find out what is being pressed. If the player is pushing the joystick upwards, you want `y` to decrease (remember that the top left corner is 0). If the player is pulling the joystick downwards, then `y` should increase. Change your loop so it looks like this:
 
@@ -198,7 +198,7 @@ You should see the bat flickering on and off. Your terminal window might look a 
 				y += 1
 	```
 
-Your full code should look like this:
+	Your full code should look like this:
 
 	```python
 	from sense_hat import SenseHat
