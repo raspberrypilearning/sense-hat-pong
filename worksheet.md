@@ -67,7 +67,7 @@ A single LED should now be illuminated.
 
 
 ##Making a bat
-1. Next we want to draw the rest of the bat, by illuminating the LEDs immediately above and below the one that you have currently selected. To do this, we're going to make a function. Select the `sense.set_pixel(0,y,255,255,255)` line, hold down **Ctrl** and then press the **x** key to cut the line. Now type the following.
+1. Next we want to draw the rest of the bat, by illuminating the LEDs immediately above and below the one that is currently illuminated. To do this, we're going to make a function. Select the `sense.set_pixel(0,y,255,255,255)` line, hold down **Ctrl** and then press the **x** key to cut the line. Now type the following.
 
 	```python
 	def drawbat():
