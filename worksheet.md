@@ -12,9 +12,9 @@ Writing Python code in IDLE 3 is great because it provides colour-coded syntax h
 
 However, not all code that we write can be run from IDLE 3. Some code needs to be run from the command line.
 
-1. Open up IDLE 3 by clicking on `Menu>Programming>Python 3 (IDLE)`
+1. Open up IDLE 3 by clicking on **Menu**, then **Programming**, then **Python 3 (IDLE)**
 1. In IDLE 3, click on **File** and then **New File**. A text editor should open up. This is where you will write your code.
-1. Save the blank file as `pong.py` by clicking on **File** and then **Save as...**
+1. Save the blank file as **pong.py** by clicking on **File** and then **Save as...**
 1. Open up a Terminal window by clicking on the icon next to the Menu.
 ![Terminal](images/terminal-icon.png)
 
@@ -32,7 +32,7 @@ At the **top-left** corner, both x and y would have values of `0`
 
 Let's start our Pong game by lighting up a single LED, and then a few more to create a bat.
 
-1. First you'll need to import the `sense_hat` library. Type the following into your `pong.py` text file:
+1. First you'll need to import the `sense_hat` library. Type the following into your pong.py text file:
 
 	```python
 	from sense_hat import SenseHat
