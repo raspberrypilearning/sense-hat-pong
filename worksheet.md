@@ -445,7 +445,7 @@ The first problem you should have noticed is that the ball tried to move off the
 	thread.start()
 	```
 
-1. At the moment, if you were to run the file, the `moveball()` function would run only once. You need the code in the function to run until the player loses. To do this, you can take all the code from within the function and place it in a `while True` loop, so it keeps running. If the ball slips past the bat, you can `break` out of the loop, and once the loop has ended, set the `game_over` variable to be `True`. Alter you function so that it looks like this.
+1. At the moment, if you were to run the file, the `moveball()` function would run only once. You need the code in the function to run until the player loses. To do this, you can take all the code from within the function and place it in a `while True` loop, so it keeps running. If the ball slips past the bat, you can `break` out of the loop, and once the loop has ended, set the `game_over` variable to be `True`. Alter your function so that it looks like this.
 
 	```python
 	def moveball():
