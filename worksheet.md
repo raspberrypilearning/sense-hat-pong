@@ -247,7 +247,7 @@ Now you have drawn a bat, you need to be able to move it using the joystick on t
 	ball_speed = [-1,-1]
 	```
 
-To get values out of a list, you can use the value's `index`. So if you wanted the ball's horizontal position, you could type `ball_position[0]`. If you wanted the ball's vertical speed, you could type `ball_speed[1]`.
+	To get values out of a list, you can use the value's `index`. So if you wanted the ball's horizontal position, you could type `ball_position[0]`. If you wanted the ball's vertical speed, you could type `ball_speed[1]`.
 
 1. Next you can create a function to draw and move the ball.
 
@@ -259,7 +259,7 @@ To get values out of a list, you can use the value's `index`. So if you wanted t
 		sense.set_pixel(ball_position[0],ball_position[1],0,0,255)
 	```
 
-This turns off the LED at the ball's position, then changes its `x` and `y` position by its horizontal and vertical speed. Then it illuminates the LED at the ball's position in a blue colour.
+	This turns off the LED at the ball's position, then changes its `x` and `y` position by its horizontal and vertical speed. Then it illuminates the LED at the ball's position in a blue colour.
 
 1. To see the ball being drawn, you'll need to call the function. For now you can call it in the `while` loop.
 
@@ -429,7 +429,7 @@ The first problem you should have noticed is that the ball tried to move off the
 
 1. The game is easy because the ball only moves when joystick is moved. You need to make the ball move independently of the joystick. This is tricky though, as the joystick events are being listened to in a `while` loop, that only cycles around once a joystick event is detected.
 
-To handle this you can use threads. Think of a thread as part of your program that can run independently of the rest of the program.
+	To handle this you can use threads. Think of a thread as part of your program that can run independently of the rest of the program.
 
 1. To begin with, you're going to need the `threading` library and the `sleep()` function from the `time` library. So at the top of your `pong.py` file, add the following lines.
 
