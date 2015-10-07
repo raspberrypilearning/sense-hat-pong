@@ -2,7 +2,7 @@
 
 In this activity you will build your own Pong clone using your Raspberry Pi, a Sense HAT and some Python code.
 
-Pong was one of the earliest graphical games ever created and was first played on an Oscilloscope.
+Pong was one of the earliest graphical games ever created and was first played on an oscilloscope.
 
 ![Oscilloscope](https://upload.wikimedia.org/wikipedia/commons/7/76/Oscilloscope.jpg)
 
