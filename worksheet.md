@@ -24,7 +24,7 @@ When we create graphical games we often use the coordinates `x` and `y`. `x` is 
 
 We can do the same with the LEDs on the Sense HAT
 
-![Coordinates](images/astro-pi-hat.png)
+![Coordinates](images/x-y.svg)
 
 At the **top-left** corner, both x and y would have values of `0`
 
@@ -63,7 +63,7 @@ Let's start our Pong game by lighting up a single LED, and then a few more to cr
 
 A single LED should now be illuminated. 
 
-![Single LED](images/single-LED.png)
+![Single LED](images/1-led.svg)
 
 
 ##Making a bat
@@ -121,7 +121,7 @@ A single LED should now be illuminated.
 
 Three LEDs should be illuminated.
 
-![Three LEDs](images/three-LED.png)
+![Three LEDs](images/3-led.svg)
 
 ##Moving the bat
 Now you have drawn a bat, you need to be able to move it using the joystick on the Sense HAT. To do this, you will need the `curses` library, which makes it easy to capture keyboard input. (The joystick corresponds to the cursor keys on the keyboard).
