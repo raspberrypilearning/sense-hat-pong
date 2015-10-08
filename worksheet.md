@@ -560,3 +560,9 @@ The first problem you should have noticed is that the ball tried to move off the
 	```
 
 1. Well done! You've made a Pong clone for the Sense HAT.
+
+## What Next?
+
+- Can you change variable values to make the game easier or harder?
+- Can you add a score, so that with each bounce off the bat it increases?
+- How about giving the player three lives, that reduces each time they miss the ball?
