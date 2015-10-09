@@ -564,5 +564,5 @@ The first problem you should have noticed is that the ball tried to move off the
 ## What Next?
 
 - Can you change variable values to make the game easier or harder?
-- Can you add a score, so that with each bounce off the bat it increases?
-- How about giving the player three lives, that reduces each time they miss the ball?
+- Can you add a score, which increases each time the ball bounces off the bat?
+- How about giving the player three lives, and making them lose one each time they miss the ball?
