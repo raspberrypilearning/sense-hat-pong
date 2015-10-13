@@ -12,7 +12,7 @@ Writing Python code in IDLE 3 is great because it provides colour-coded syntax h
 
 However, not all code that we write can be run from IDLE 3. Some code needs to be run from the command line.
 
-1. Open up IDLE 3 by clicking on **Menu**, then **Programming**, then **Python 3 (IDLE)**
+1. Open up IDLE 3 by clicking on **Menu**, then **Programming**, then **Python 3 (IDLE)**.
 1. In IDLE 3, click on **File** and then **New File**. A text editor should open up. This is where you will write your code.
 1. Save the blank file as **pong.py** by clicking on **File** and then **Save as...**
 1. Open up a Terminal window by clicking on the icon next to the Menu.
@@ -425,7 +425,7 @@ The first problem you should have noticed is that the ball tried to move off the
 
 	```
 
-## Making the ball move on its own.
+## Making the ball move on its own
 
 1. The game is easy because the ball only moves when joystick is moved. You need to make the ball move independently of the joystick. This is tricky though, as the joystick events are being listened to in a `while` loop, that only cycles around once a joystick event is detected.
 
