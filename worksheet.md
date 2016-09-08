@@ -6,18 +6,6 @@ Pong was one of the earliest graphical games ever created and was first played o
 
 ![Oscilloscope](https://upload.wikimedia.org/wikipedia/commons/7/76/Oscilloscope.jpg)
 
-## Writing in IDLE, but running in the terminal
-
-Writing Python code in IDLE 3 is great because it provides colour-coded syntax highlighting, that can help you spot little mistakes that you make.
-
-However, not all code that we write can be run from IDLE 3. Some code needs to be run from the command line.
-
-1. Open up IDLE 3 by clicking on **Menu**, then **Programming**, then **Python 3 (IDLE)**.
-1. In IDLE 3, click on **File** and then **New File**. A text editor should open up. This is where you will write your code.
-1. Save the blank file as **pong.py** by clicking on **File** and then **Save as...**
-1. Open up a Terminal window by clicking on the icon next to the Menu.
-![Terminal](images/terminal-icon.png)
-
 ## Graphics and Coordinates
 
 When we create graphical games we often use the coordinates `x` and `y`. `x` is used to set the horizontal position of an object. `y` is used to set the vertical position of an object.
@@ -31,6 +19,8 @@ At the **top-left** corner, both x and y would have values of `0`
 ## Lighting up an LED
 
 Let's start our Pong game by lighting up a single LED, and then a few more to create a bat.
+
+1. Click on `Menu` > `Programming` > `Python 3 (IDLE)` and then in the window that opens up, click on `File` and `New File`. The second window that opens is where you will write your code.
 
 1. First you'll need to import the `sense_hat` library. Type the following into your pong.py text file:
 
@@ -53,45 +43,30 @@ Let's start our Pong game by lighting up a single LED, and then a few more to cr
 
 1. The values `(0,y,255,255,255)` indicate the `x` and `y` position of the LED, and the colour of light it should emit. `255,255,255` is white.
 
-1. Save your file by holding down the **Ctrl** key and then pressing the **s** key.
-
-1. To run your file, switch over to the terminal window you opened earlier and type:
-
-	```bash
-	python3 pong.py
-	```
+1. Save your file by holding down the `Ctrl` key and then pressing the `s` key. Then run it by pressing `F5`
 
 A single LED should now be illuminated. 
 
 ![Single LED](images/1-led.png)
 
 
-##Making a bat
-1. Next we want to draw the rest of the bat, by illuminating the LEDs immediately above and below the one that is currently illuminated. To do this, we're going to make a function. Select the `sense.set_pixel(0,y,255,255,255)` line, hold down **Ctrl** and then press the **x** key to cut the line. Now type the following.
+## Making a bat
+1. Next we want to draw the rest of the bat, by illuminating the LEDs immediately above and below the one that is currently illuminated. To do this, we're going to make a function. Delete the `sense.set_pixel(0,y,255,255,255)` line, and then type the following:
 
 	```python
 	def drawbat():
 	```
 
-1. Now paste the line you just cut into the function three times. You can do this by holding down **Ctrl** and pressing the **v** key, so that your function looks like this.
+1. Now add three lines to your function to illuminate the LED at position `y`, `y + 1` and `y - 1`.
 
 	```python
 	def drawbat():
-		sense.set_pixel(0,y,255,255,255)
-		sense.set_pixel(0,y,255,255,255)
-		sense.set_pixel(0,y,255,255,255)
+		sense.set_pixel(0, y, 255, 255, 255)
+		sense.set_pixel(0, y + 1,255, 255, 255)
+		sense.set_pixel(0, y - 1,255, 255, 255)
 	```
 
-1. This will try to illuminate the same pixel three times. You want the pixel above and below the `y` position to be illuminated, so edit the function to add and subtract one from `y`.
-
-	```python
-	def drawbat():
-		sense.set_pixel(0,y,255,255,255)
-		sense.set_pixel(0,y+1,255,255,255)
-		sense.set_pixel(0,y-1,255,255,255)
-	```
-
-1. You can test your function works by calling it on the last line of your file.
+1. You can test your function works by calling it on the last line of the shell - that's the other IDLE window that should be open.
 
 	```python
 	drawbat()
@@ -109,21 +84,14 @@ A single LED should now be illuminated.
 		sense.set_pixel(0,y,255,255,255)
 		sense.set_pixel(0,y+1,255,255,255)
 		sense.set_pixel(0,y-1,255,255,255)
-
-	drawbat()
-	```
-
-1. Test your file by running it from the terminal:
-
-	```bash
-	python3 pong.py
 	```
 
 Three LEDs should be illuminated.
 
 ![Three LEDs](images/3-led.png)
 
-##Moving the bat
+## Moving the bat
+
 Now you have drawn a bat, you need to be able to move it using the joystick on the Sense HAT. To do this, you will need the `curses` library, which makes it easy to capture keyboard input. (The joystick corresponds to the cursor keys on the keyboard).
 
 1. On the second line of your file, import the `curses` library, so the first two lines look like this.
