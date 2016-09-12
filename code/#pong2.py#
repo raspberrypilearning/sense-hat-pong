@@ -1,14 +1,22 @@
 from time import sleep
-#from sense_hat import SenseHat
-from sense_emu import SenseHat
+from sense_hat import SenseHat
+
 sense = SenseHat()
-
-
-sense.clear(0, 0, 0)
-
 y = 4
 ball_position=[6, 3]
 ball_speed=[-1, -1]
+
+def move_up(event):
+    global y
+    if y > 1 and event.action=='pressed':
+        y -= 1
+    print(event)
+
+def move_down(event):
+    global y
+    if y < 6 and event.action=='pressed':
+        y += 1
+    print(event)
 
 def draw_bat():
     sense.set_pixel(0, y, 255, 255, 255)
@@ -33,23 +41,12 @@ def ball_play():
     sense.set_pixel(ball_position[0], ball_position[1], 0, 0, 255)
     return True
 
-def move_up(event):
-    global y
-    if y > 1 and event.action=='pressed':
-        y -= 1
-    print(event)
-
-def move_down(event):
-    global y
-    if y < 6 and event.action=='pressed':
-        y += 1
-    print(event)
 
 
 sense.stick.direction_up = move_up
 sense.stick.direction_down = move_down
 
-while ball_play():
+while ball_playl():
     draw_bat()
     sleep(0.25)
     sense.clear(0, 0, 0)

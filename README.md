@@ -2,11 +2,11 @@
 
 ![Sense HAT Pong](cover.png)
 
-In this activity you will make a single player Pong game using your Raspberry Pi and the Sense HAT. The ball will bounce around the LED matrix while you control the bat using the Sense HAT joystick.
+In this activity you will make a single-player Pong game, using your Raspberry Pi and the Sense HAT. The ball will bounce around the LED matrix while you control the bat using the Sense HAT joystick.
 
 ## Requirements
 
-As well as a Raspberry Pi, the usual peripherals, and an up-to-date SD card you'll also need:
+As well as a Raspberry Pi, the usual peripherals, and an up-to-date SD card, you'll also need:
 
 ### Hardware
 
@@ -16,7 +16,7 @@ As well as a Raspberry Pi, the usual peripherals, and an up-to-date SD card you'
 
 - Sense HAT for Python 3
 
-See [software installation](software.md)
+See [software installation](software.md) for more details.
 
 ## The worksheet
 
