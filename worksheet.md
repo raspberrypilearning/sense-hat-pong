@@ -6,7 +6,7 @@ Pong was one of the earliest graphical games ever created and could even be play
 
 ![Oscilloscope](https://upload.wikimedia.org/wikipedia/commons/7/76/Oscilloscope.jpg)
 
-If you don't have a Sense HAT to use with this tutorial, you can use the Sense HAT emulator. To install this, open a terminal (`ctrl` + `alt` + `t`). Then type:
+If you don't have a Sense HAT to use with this tutorial, you can use the Sense HAT emulator. To install this, open a terminal window (`ctrl` + `alt` + `t`). Then type:
 
 ``` bash
 sudo pip3 install sense-emu
