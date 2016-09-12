@@ -24,4 +24,4 @@ Unless otherwise specified, everything in this repository is covered by the foll
 
 ***Sense HAT Pong*** by the [Raspberry Pi Foundation](http://www.raspberrypi.org) is licenced under a [Creative Commons Attribution 4.0 International Licence](http://creativecommons.org/licenses/by-sa/4.0/).
 
-Based on a work at https://github.com/raspberrypilearning/example-resource
+Based on a work at https://github.com/raspberrypilearning/sense-hat-pong
