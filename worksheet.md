@@ -211,11 +211,11 @@ A single LED should now be illuminated.
 
 The next step is to create the ball. But first, a little maths!
 
-If you think about a moving ball, it has two essential properties. It has a position and a velocity (speed in a straight line). As you're only working in two dimensions, both of these properties can be described by two numbers each.
+If you think about a moving ball, it has two essential properties. It has a position and a velocity (speed in a straight line). As you're only working in two dimensions, both of these properties can be described by two numbers each. 
 - The ball's position, like the bat, has a vertical and horizontal position.
-- The ball's velocity can also be described by two numbers. How fast it's moving in the `x` direction and how fast it's moving in the `y` dimension.
+- The ball's velocity can also be described by two numbers: how fast it is moving in the `x` direction and how fast it is moving in the `y` dimension.
 
-1. Where you set the `y` variable near the top of your program, you can now add the ball's properties. The easiest way to store these properties is using lists. One list can store the position and the other the velocity.
+1. Where you set the `y` variable near the top of your program, you can now add the ball's properties. The easiest way to store these properties to use lists. One list can store the position and the other can store the velocity.
 
     ``` python
     ball_position = [3, 3]
@@ -244,7 +244,7 @@ If you think about a moving ball, it has two essential properties. It has a posi
         draw_ball()
         sleep(0.25)
     ```
-1. Run your code (`ctrl` + `s` then `F5`), and the ball should be drawn on the LEDs.
+1. Run your code (`ctrl` + `s` then `F5`), and the ball should be drawn on the LED matrix.
 
 ## Moving the ball
 
@@ -257,7 +257,7 @@ To move the ball, you just need to change its `x` position by its `x` velocity, 
     ball_position[1] += ball_velocity[1]
     ```
 
-1. Now when you run your code, the ball should move across the LED matrix, and then your program will crash with the error `ValueError: X position must be between 0 and 7`
+1. Now, when you run your code, the ball should move across the LED matrix, and then your program will crash with the error `ValueError: X position must be between 0 and 7`.
 
 1. What's happened? The ball gained an x position that was higher than 7, and this is obviously impossible. You can handle this in your code by adding a conditional, stating that if the `ball_position[0]` reaches `7`, its velocity gets reversed (so it goes in the other direction.
 
