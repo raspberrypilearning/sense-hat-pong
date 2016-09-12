@@ -90,7 +90,7 @@ A single LED should now be illuminated.
 	draw_bat()
 	```
 
-1. When you hit enter, the LEDs should be illuminated.
+1. When you hit `Enter`, the LEDs should be illuminated.
 
 ![Three LEDs](images/3-led.png)
 
