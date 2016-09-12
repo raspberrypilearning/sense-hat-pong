@@ -298,7 +298,7 @@ Your game is only two more lines away from being finished, but the next part tak
 
 1. Run this code and the ball will bounce for ever.
 
-1. Now the conditional needs to check the position of the bat. Switch over to the `shell` (the other Python window), to test this out.
+1. Now the conditional needs to check the position of the bat. Switch over to the shell window to test this out.
 
 ``` python
 >>> y = 3
@@ -316,7 +316,7 @@ Your game is only two more lines away from being finished, but the next part tak
         ball_velocity[0] = -ball_velocity[0]
     ```
 
-1. Run your code and have a play at your own version of pong.
+1. Run your code and have a go at playing your own version of Pong.
 
 1. If you get an error, then check your code against this full listing:
 
