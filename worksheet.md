@@ -124,7 +124,7 @@ A single LED should now be illuminated.
             y -= 1
     ```
     
-    Did you notice the `event` parameter? When the stick is pressed your function will be passed some information about the joystick `event`. This will include the time that the stick was used, the direction it was pushed and whether it was pressed, released or held.
+    Did you notice the `event` parameter? When the stick is pressed, your function will be passed some information about the joystick `event`. This will include the time that the stick was used, the direction it was pushed, and whether it was pressed, released, or held.
 
 1. To test out the code, you can draw the bat and clear the screen in a infinite loop. Add this to the bottom of your code.
 
@@ -143,7 +143,7 @@ A single LED should now be illuminated.
         if event.action == 'pressed':
             y -= 1
     ```
-    Now save and run your code and you should be able to move the bat. Can you find the bug in your code?
+    Now save and run your code, and you should be able to move the bat. There should be a bug in your code, though: can you spot it? 
     
 1. If you move the bat too far up, your program tries to draw the bat off the LED grid. You need to check that the `y` variable never goes lower than `1`.
 
@@ -153,20 +153,20 @@ A single LED should now be illuminated.
         if event.action == 'pressed' and y > 1:
             y -= 1
     ```
-1. Running this code and moving the joystick up, should move the bat.
+1. Running this code and moving the joystick up should move the bat.
 
 1. Next you need to be able to move your bat down. Start by using a callback, just like you did before. Add this next line 
 
     ``` python
     sense.stick.direction_down = move_down
     ```
-1. Now you need a `move_down` function. Make sure this goes above your **callback** lines.
+1. Now you need a `move_down` function. Make sure this goes above your callback lines.
 
     ``` python
     def move_down():
     ```
 
-1. Can you figure the rest of the code out yourself for this function.
+1. Can you figure the rest of the code for this function out yourself? 
     - You'll need a declaration that `y` is a `global` variable
     - You'll need the `y` variable to change by `+1`, but only if the action is `pressed` and `y < 7`
 
