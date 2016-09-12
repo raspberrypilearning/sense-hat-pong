@@ -38,7 +38,7 @@ Let's start our Pong game by lighting up a single LED, and then a few more to cr
 	sense = SenseHat()
 	```
 
-1. If you are using the emulator as opposed to the physical Sense HAT, you need only change one line, so that the above code reads:
+1. If you are using the emulator as opposed to the physical Sense HAT, you need to change one line, so that the above code reads:
 
     ``` python
     from sense_emu import SenseHat
@@ -69,7 +69,7 @@ A single LED should now be illuminated.
 
 ## Making a bat
 
-1. Next we want to draw the rest of the bat, by illuminating the LEDs immediately above and below the one that is currently illuminated. To do this, we're going to make a function. Delete the `sense.set_pixel(0, y, 255, 255, 255)` line, and then type the following:
+1. Next we want to draw the rest of the bat by illuminating the LEDs immediately above and below the one that is currently illuminated. To do this, we're going to make a function. Delete the `sense.set_pixel(0, y, 255, 255, 255)` line, and then type the following:
 
 	```python
 	def draw_bat():
@@ -84,7 +84,7 @@ A single LED should now be illuminated.
 		sense.set_pixel(0, y - 1,255, 255, 255)
 	```
 
-1. You can test your function works by **calling** it in the shell - that's the other IDLE window that should be open.
+1. You can test your function works by **calling** it in the shell, which is the other IDLE window that should be open.
 
 	```python
 	draw_bat()
@@ -110,7 +110,7 @@ A single LED should now be illuminated.
 
 ## Moving the bat
 
-1. You can now tell the Raspberry Pi what you want to happen when the SenseHAT joystick is used. You can do this using what are known as **callbacks**. When the stick is pushed up, a `move_up` function will be called. When the stick is pushed down, a `move_down` function will be called. You haven't written those functions yet, but will do that next. Start with the `move_up` callback.
+1. You can now tell the Raspberry Pi what you want to happen when the Sense HAT joystick is used. You can do this by using what are known as **callbacks**. When the stick is pushed up, a `move_up` function will be called. When the stick is pushed down, a `move_down` function will be called. You haven't written those functions yet, but you will do that next. Start with the `move_up` callback.
 
     ``` python
     sense.stick.direction_up = move_up
