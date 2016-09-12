@@ -11,13 +11,13 @@ If you don't have a Sense HAT to use with this tutorial, you can use the Sense H
 ``` bash
 sudo pip3 install sense-emu
 ```
-To start the emulator you can type `sense_emu_gui` in the terminal.
+To start the emulator, you can type `sense_emu_gui` in the terminal window.
 
 ## Graphics and Coordinates
 
-When we create graphical games we often use the coordinates `x` and `y` to tell us where an object is on the display. `x` is used to set the horizontal position of an object. `y` is used to set the vertical position of an object.
+When we create graphical games, we often use the coordinates `x` and `y` to tell us where an object is on the display. `x` is used to set the horizontal position of an object. `y` is used to set the vertical position of an object.
 
-We can do the same with the LEDs on the Sense HAT
+We can do the same with the LEDs on the Sense HAT.
 
 ![Coordinates](images/x-y.png)
 
@@ -27,7 +27,7 @@ At the **top-left** corner, both x and y would have values of `0`
 
 Let's start our Pong game by lighting up a single LED, and then a few more to create a bat.
 
-1. Click on `Menu` > `Programming` > `Python 3 (IDLE)` and then in the window that opens up, click on `File` and `New File`. The second window that opens is where you will write your code.
+1. Click on `Menu` > `Programming` > `Python 3 (IDLE)`. Then, in the window that opens up, click on `File` and `New File`. The second window that opens is where you will write your code.
 
 1. First you'll need to import the `sense_hat` and `time` modules. Type the following into your pong.py text file:
 
@@ -38,7 +38,7 @@ Let's start our Pong game by lighting up a single LED, and then a few more to cr
 	sense = SenseHat()
 	```
 
-1. If you are using the emulator as opposed to the real sense hat, you need only change one line, so that the above code reads:
+1. If you are using the emulator as opposed to the physical Sense HAT, you need only change one line, so that the above code reads:
 
     ``` python
     from sense_emu import SenseHat
