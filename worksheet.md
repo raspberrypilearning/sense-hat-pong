@@ -47,7 +47,7 @@ Let's start our Pong game by lighting up a single LED, and then a few more to cr
     sense = SenseHat()
     ```
 
-1. The bat will always be on the far left column of pixels, so its `x` value will always be `0`, but the `y` value will change as you move the bat up and down. Start by setting the `y` value to 4, by adding this line
+1. The bat will always be on the far left column of pixels, so its `x` value will always be `0`, but the `y` value will change as you move the bat up and down. Start by setting the `y` value to 4, by adding this line:
 
 	```python
 	y = 4
@@ -170,7 +170,7 @@ A single LED should now be illuminated.
     - You'll need a declaration that `y` is a `global` variable
     - You'll need the `y` variable to change by `+1`, but only if the action is `pressed` and `y < 7`
 
-1. Your complete code should now look soemthing like this:
+1. Your complete code should now look something like this:
 
     ``` python
     from time import sleep
@@ -209,12 +209,11 @@ A single LED should now be illuminated.
 
 ## Creating a ball
 
-The next step is to create the ball, but first a little maths!
+The next step is to create the ball. But first, a little maths!
 
 If you think about a moving ball, it has two essential properties. It has a position and a velocity (speed in a straight line). As you're only working in two dimensions, both of these properties can be described by two numbers each.
-
-The ball's position, like the bat, has a vertical and horizontal position.
-The ball's velocity can also be described by two numbers. How fast it's moving in the `x` direction and how fast it's moving in the `y` dimension.
+- The ball's position, like the bat, has a vertical and horizontal position.
+- The ball's velocity can also be described by two numbers. How fast it's moving in the `x` direction and how fast it's moving in the `y` dimension.
 
 1. Where you set the `y` variable near the top of your program, you can now add the ball's properties. The easiest way to store these properties is using lists. One list can store the position and the other the velocity.
 
@@ -229,14 +228,14 @@ The ball's velocity can also be described by two numbers. How fast it's moving i
     def draw_ball():
     ```
 
-1. To begin with you can add a line of code to the function to illuminate an LED. The position on the `x` axis will be the 0th item in the `ball_position` list. The `y` position will be the 1st item in the `ball_position` list. You can colour the ball anyway you like, but in this example it's blue (`0, 0, 255`)
+1. To begin with, you can add a line of code to the function to illuminate an LED. The position on the `x` axis will be the 0th item in the `ball_position` list. The `y` position will be the 1st item in the `ball_position` list. You can choose any colour you like for the ball, but in this example it's blue (`0, 0, 255`).
 
     ``` python
     def draw_ball():
         sense.set_pixel(ball_position[0], ball_position[1], 0, 0, 255)
     ```
 
-1. In your `while True` loop, you can now call the function
+1. In your `while True` loop, you can now call the function.
 
     ``` python
     while True:
@@ -249,7 +248,7 @@ The ball's velocity can also be described by two numbers. How fast it's moving i
 
 ## Moving the ball
 
-To move the ball, you just need to change it's `x` position by it's `x` velocity, and it's `y` position by it's `y` velocity.
+To move the ball, you just need to change its `x` position by its `x` velocity, and its `y` position by its `y` velocity.
 
 1. Add these two lines to your `draw_ball` function.
 
@@ -260,14 +259,14 @@ To move the ball, you just need to change it's `x` position by it's `x` velocity
 
 1. Now when you run your code, the ball should move across the LED matrix, and then your program will crash with the error `ValueError: X position must be between 0 and 7`
 
-1. What's happened? The ball gained an x position that was higher than 7, and this is obviously impossible. You can handle this in your code by adding a conditional, stating that if the `ball_position[0]` reaches `7`, it's velocity gets reversed (so it goes in the other direction.
+1. What's happened? The ball gained an x position that was higher than 7, and this is obviously impossible. You can handle this in your code by adding a conditional, stating that if the `ball_position[0]` reaches `7`, its velocity gets reversed (so it goes in the other direction.
 
 ``` python
 if ball_position[0] == 7:
     ball_velocity[0] = -ball_velocity[0]
 ```
 
-1. If you can think of the bug that still remains, try and fix it before you run your code, otherwise just run your program and look at the error, then try to fix it before moving on.
+1. If you can identify the bug that still remains, try and fix it before you run your code. Otherwise just run your program and look at the error, then try to fix it before moving on.
 
 1. The error you get should say `ValueError: Y position must be between 0 and 7`. This means the `y` position of the ball went outside the bounds of the LED matrix. It needs to stay between `0` and `7`. Another conditional can fix this.
 
@@ -276,7 +275,7 @@ if ball_position[0] == 7:
         ball_velocity[1] = -ball_velocity[1]
     ```
 
-1. Now the ball bounces, until it reaches the far left of the LED matrix. Obviously, if this happens, the game should end, as the player hasn't managed to position the bat in place.
+1. Now the ball bounces until it reaches the far left of the LED matrix. Obviously, if this happens, the game should end, as the player hasn't managed to position the bat in place.
 
     ``` python
     if ball_position[0] == 0:
