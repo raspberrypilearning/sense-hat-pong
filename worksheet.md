@@ -1,6 +1,6 @@
 # Make a Pong Clone for your Sense HAT
 
-In this activity you will build your own Pong clone using your Raspberry Pi, a Sense HAT and some Python code.
+In this activity you will build your own Pong clone using your Raspberry Pi, a Sense HAT, and some Python code.
 
 Pong was one of the earliest graphical games ever created and could even be played on an oscilloscope.
 
