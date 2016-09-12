@@ -1,23 +1,8 @@
 # Software installation
 
-Connect your Sense HAT and boot up the Raspberry Pi.
+No additional software is required to use this resource. However, if you don't have access to a Sense HAT you can use our emulator.
 
-First update and upgrade your system by entering the following commands into a terminal window (while connected to the internet):
-
-```bash
-sudo apt-get update
-sudo apt-get upgrade
+``` bash
+sudo pip3 install sense-emu
 ```
 
-Now install the Sense HAT software packages:
-
-```bash
-sudo apt-get install sense-hat
-sudo pip-3.2 install pillow
-```
-
-Finally, reboot the Pi to complete the installation:
-
-```bash
-sudo reboot
-```
