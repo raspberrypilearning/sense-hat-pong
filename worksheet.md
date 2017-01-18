@@ -4,7 +4,7 @@ In this activity you will build your own Pong clone using your Raspberry Pi, a S
 
 Pong was one of the earliest graphical games ever created, and could even be played on an oscilloscope.
 
-![Oscilloscope](https://upload.wikimedia.org/wikipedia/commons/7/76/Oscilloscope.jpg)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bzEBOjvA11w" frameborder="0" allowfullscreen></iframe>
 
 If you don't have a Sense HAT to use with this tutorial, you can use the Sense HAT emulator. To install this, open a terminal window (`Ctrl` + `Alt` + `T`). Then type the following command:
 
