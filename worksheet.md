@@ -64,7 +64,7 @@ Let's start our Pong game by lighting up a single LED, and then a few more to cr
 
 1. Save your file by holding down the `Ctrl` key and then pressing the `S` key. Call it  `pong.py`, then run it by pressing `F5`.
 
-A single LED should now be illuminated. 
+	A single LED should now be illuminated. 
 
 ![Single LED](images/1-led.png)
 
@@ -156,7 +156,7 @@ Your entire file should so far look like this:
             y -= 1
     ```
     
-Running this code and moving the joystick up should move the bat.
+	Running this code and moving the joystick up should move the bat.
 
 1. Next, you need to be able to move your bat down. Start by using a callback, just like you did before. Add this next line: 
 
@@ -250,7 +250,7 @@ If you think about a moving ball, it has two essential properties. It has a posi
         sleep(0.25)
     ```
     
-1. Save and run your code (`Ctrl` + `S` then `F5`), and the ball should be drawn on the LED matrix.
+1. Save your code by pressing `Ctrl + S` and then press `F5` to run it, and the ball should be drawn on the LED matrix.
 
 ## Moving the ball
 
@@ -263,14 +263,14 @@ To move the ball, you just need to change its `x` position by its `x` velocity, 
     ball_position[1] += ball_velocity[1]
     ```
 
-Now, when you run your code, the ball should move across the LED matrix, and then your program will crash with the error `ValueError: X position must be between 0 and 7`. What happened? The ball gained an `x` position that was higher than 7, and this is obviously impossible.
+	Now, when you run your code, the ball should move across the LED matrix, and then your program will crash with the error `ValueError: X position must be between 0 and 7`. What happened? The ball gained an `x` position that was higher than 7, and this is obviously impossible.
 
 1. You can handle this in your code by adding a conditional, stating that if the `ball_position[0]` reaches `7`, its velocity gets reversed so it goes in the other direction:
 
-``` python
-if ball_position[0] == 7:
-    ball_velocity[0] = -ball_velocity[0]
-```
+	``` python
+	if ball_position[0] == 7:
+    	ball_velocity[0] = -ball_velocity[0]
+	```
 
 1. If you can identify the bug that still remains, try and fix it before you run your code. Otherwise, just run your program and look at the error, then try to fix it before moving on.
 
@@ -306,12 +306,12 @@ Your game is only two more lines away from being finished, but the next part tak
 
 1. Now the conditional needs to check the position of the bat. Switch over to the shell window to test this out:
 
-``` python
->>> y = 3
->>> 2 <= y <= 4
-```
+	``` python
+	>>> y = 3
+	>>> 2 <= y <= 4
+	```
 
-The interpreter is telling you that the statement you've just written is `True`. Look closely at the line. In English it would read as `Two is less than or equal to y, which is less than or equal to four.` This is a very handy way of determining if one number is between another two numbers or not.
+	The interpreter is telling you that the statement you've just written is `True`. Look closely at the line. In English it would read as `Two is less than or equal to y, which is less than or equal to four.` This is a very handy way of determining if one number is between another two numbers or not.
     
 1. So to see if the ball is going to hit the bat, you can test whether the top of the bat (`y - 1`) is less than or equal to the ball's position (`ball_position[1]`), and the ball's position is less than the bottom edge of the bat (`y + 1`):
 
