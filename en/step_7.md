@@ -63,40 +63,39 @@
     - You'll need a declaration that `y` is a `global` variable.
     - You'll need the `y` variable to change by `+1`, but only if the action is `pressed` and `y < 7`.
 
-	Your complete code should now look something like this:
+Your complete code should now look something like this:
 
-    	``` python
-    	from time import sleep
-    	#from sense_hat import SenseHat
-    	from sense_emu import SenseHat
-	sense = SenseHat()
+``` python
+from time import sleep
+#from sense_hat import SenseHat
+from sense_emu import SenseHat
+sense = SenseHat()
 
-    	y = 4
+y = 4
 
-    	def draw_bat():
-        	sense.set_pixel(0, y, 255, 255, 255)
-        	sense.set_pixel(0, y+1, 255, 255, 255)
-        	sense.set_pixel(0, y-1, 255, 255, 255)
+def draw_bat():
+	sense.set_pixel(0, y, 255, 255, 255)
+        sense.set_pixel(0, y+1, 255, 255, 255)
+        sense.set_pixel(0, y-1, 255, 255, 255)
 
-    	def move_up(event):
-        	global y
-        	if y > 1 and event.action=='pressed':
-            		y -= 1
-        	print(event)
+def move_up(event):
+	global y
+        if y > 1 and event.action=='pressed':
+        	y -= 1
+        print(event)
 
-    	def move_down(event):
-        	global y
-        	if y < 6 and event.action=='pressed':
-            		y += 1
-        	print(event)
+def move_down(event):
+	global y
+        if y < 6 and event.action=='pressed':
+            	y += 1
+        print(event)
 
-
-    	sense.stick.direction_up = move_up
-    	sense.stick.direction_down = move_down
+sense.stick.direction_up = move_up
+sense.stick.direction_down = move_down
     
-    	while True:
-        	sense.clear(0, 0, 0)
-        	draw_bat()
-        	sleep(0.25)
-    	```
+while True:
+	sense.clear(0, 0, 0)
+        draw_bat()
+        sleep(0.25)
+```
 
