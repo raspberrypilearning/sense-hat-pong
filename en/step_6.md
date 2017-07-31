@@ -27,15 +27,15 @@
 
 	Your entire file should so far look like this:
 
-		```python
-		from sense_hat import SenseHat
-		sense = SenseHat()
+	```python
+	from sense_hat import SenseHat
+	sense = SenseHat()
 
-		y = 4
+	y = 4
 
-		def draw_bat():
-			sense.set_pixel(0,y,255,255,255)
-			sense.set_pixel(0,y+1,255,255,255)
-			sense.set_pixel(0,y-1,255,255,255)
-		```
+	def draw_bat():
+		sense.set_pixel(0,y,255,255,255)
+		sense.set_pixel(0,y+1,255,255,255)
+		sense.set_pixel(0,y-1,255,255,255)
+	```
 
