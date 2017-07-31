@@ -6,7 +6,7 @@ description: 'In this activity you will make a single player Pong game using you
 original_url: https://raspberrypi.org/learning/sense-hat-pong
 theme: red
 duration: 2
-listed: false
+listed: true
 ingredient: false
 copyedit: true
 curriculum: creator, design-0, programming-0, phys-comp-0, manufacture-0, community-0
