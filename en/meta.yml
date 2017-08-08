@@ -4,7 +4,7 @@ hero_image: images/banner.png
 description: 'In this activity you will make a single player Pong game using your
   Raspberry Pi and the Sense HAT. '
 original_url: https://raspberrypi.org/learning/sense-hat-pong
-theme:blue
+theme: blue
 duration: 2
 listed: true
 ingredient: false
