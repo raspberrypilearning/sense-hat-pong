@@ -17,7 +17,6 @@ steps:
 - title: Introduction
 - title: What you will need
 - title: Connect to the Sense HAT
-- title: Graphics and coordinates
 - title: Lighting up an LED
 - title: Making a bat
 - title: Moving the bat

@@ -1,101 +1,41 @@
-## Moving the bat
+## Creating a ball
 
-- You can now tell the Raspberry Pi what you want to happen when the Sense HAT joystick is used. You can do this by using what are known as **callbacks**. When the stick is pushed up, a `move_up` function will be called. When the stick is pushed down, a `move_down` function will be called. You haven't written those functions yet, but you will do that next. Start with the `move_up` callback:
+The next step is to create the ball. But first, a little maths!
+
+If you think about a moving ball, it has two essential properties. It has a position and a velocity (speed in a straight line). As you're only working in two dimensions, both of these properties can be described by two numbers each:
+
+- The ball's position, like the bat, has a vertical and horizontal position.
+- The ball's velocity can also be described by two numbers: how fast it's moving in the `x` dimension and how fast it's moving in the `y` dimension.
+
+- Where you set the `y` variable near the top of your program, you can now add the ball's properties. The easiest way to store these properties is to use lists. One list can store the position and the other can store the velocity:
 
     ``` python
-    sense.stick.direction_up = move_up
+    ball_position = [3, 3]
+    ball_velocity = [1, 1]
     ```
 
-- Now above that line of code, you can write your function:
+- Now you can create a function to draw the ball:
 
     ``` python
-    def move_up(event)
-        if event.action == 'pressed':
-            y -= 1
+    def draw_ball():
     ```
-    
-    Did you notice the `event` parameter? When the stick is pressed, your function will be passed some information about the joystick `event`. This will include the time that the stick was used, the direction it was pushed, and whether it was pressed, released, or held.
 
-- To test out the code, you can draw the bat and clear the screen in a infinite loop. Add this to the bottom of your code:
+- To begin with, you can add a line of code to the function to illuminate an LED. The position on the `x` axis will be the 0th item in the `ball_position` list. The `y` position will be the 1st item in the `ball_position` list. You can choose any colour you like for the ball, but in this example it's blue (`0, 0, 255`):
+
+    ``` python
+    def draw_ball():
+        sense.set_pixel(ball_position[0], ball_position[1], 0, 0, 255)
+    ```
+
+- In your `while True` loop, you can now call the function:
 
     ``` python
     while True:
         sense.clear(0, 0, 0)
         draw_bat()
+        draw_ball()
         sleep(0.25)
     ```
-
-- Does anything happen when you run the file and use the joystick? Probably not. This is because the variable `y` is a **global variable**. Variables outside of a function can't be changed by that function, unless you tell Python it's a global variable. Change your `move_up` function so it reads like this:
-
-    ``` python
-    def move_up(event)
-        global y
-        if event.action == 'pressed':
-            y -= 1
-    ```
     
-    Now save and run your code, and you should be able to move the bat. There should be a bug in your code, though: can you spot it? 
-    
-- If you move the bat too far up, your program tries to draw the bat off the LED grid. You need to check that the `y` variable never goes lower than `1`, with the following code:
-
-    ``` python
-    def move_up(event)
-        global y
-        if event.action == 'pressed' and y > 1:
-            y -= 1
-    ```
-    
-	Running this code and moving the joystick up should move the bat.
-
-- Next, you need to be able to move your bat down. Start by using a callback, just like you did before. Add this next line: 
-
-    ``` python
-    sense.stick.direction_down = move_down
-    ```
-    
-- Now you need a `move_down` function. Make sure this goes above your callback lines:
-
-    ``` python
-    def move_down():
-    ```
-
-- Can you figure out the rest of the code for this function yourself? 
-    - You'll need a declaration that `y` is a `global` variable.
-    - You'll need the `y` variable to change by `+1`, but only if the action is `pressed` and `y < 7`.
-
-Your complete code should now look something like this:
-
-``` python
-from time import sleep
-#from sense_hat import SenseHat
-from sense_emu import SenseHat
-sense = SenseHat()
-
-y = 4
-
-def draw_bat():
-	sense.set_pixel(0, y, 255, 255, 255)
-        sense.set_pixel(0, y+1, 255, 255, 255)
-        sense.set_pixel(0, y-1, 255, 255, 255)
-
-def move_up(event):
-	global y
-        if y > 1 and event.action=='pressed':
-        	y -= 1
-        print(event)
-
-def move_down(event):
-	global y
-        if y < 6 and event.action=='pressed':
-            	y += 1
-        print(event)
-
-sense.stick.direction_up = move_up
-sense.stick.direction_down = move_down
-    
-while True:
-	sense.clear(0, 0, 0)
-        draw_bat()
-        sleep(0.25)
-```
+- Save your code by pressing `Ctrl + S` and then press `F5` to run it, and the ball should be drawn on the LED matrix.
 

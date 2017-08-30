@@ -1,39 +1,84 @@
-## Moving the ball
+## Collision with the bat
 
-To move the ball, you just need to change its `x` position by its `x` velocity, and its `y` position by its `y` velocity.
+Your game is only two more lines away from being finished, but the next part takes some explaining.
 
-- Add these two lines to your `draw_ball` function:
+- You can start by making the ball bounce when it gets close to the horizontal position of the bat, no matter where the bat is vertically. Add this to your `draw_ball` function:
 
     ``` python
-    ball_position[0] += ball_velocity[0]
-    ball_position[1] += ball_velocity[1]
+    if ball_position[0] == 1:
+        ball_velocity[0] = -ball_velocity[0]
     ```
 
-	Now, when you run your code, the ball should move across the LED matrix, and then your program will crash with the error `ValueError: X position must be between 0 and 7`. What happened? The ball gained an `x` position that was higher than 7, and this is obviously impossible.
+- Run this code and the ball will bounce forever.
 
-- You can handle this in your code by adding a conditional, stating that if the `ball_position[0]` reaches `7`, its velocity gets reversed so it goes in the other direction:
+- Now the conditional needs to check the position of the bat. Switch over to the shell window to test this out:
 
 	``` python
-	if ball_position[0] == 7:
-    	ball_velocity[0] = -ball_velocity[0]
+	>>> y = 3
+	>>> 2 <= y <= 4
 	```
 
-- If you can identify the bug that still remains, try and fix it before you run your code. Otherwise, just run your program and look at the error, then try to fix it before moving on.
-
-- The error you get should say `ValueError: Y position must be between 0 and 7`. This means the `y` position of the ball went outside the bounds of the LED matrix. It needs to stay between `0` and `7`. Another conditional can fix this:
-
-    ``` python
-    if ball_position[1] == 0 or ball_position[1] == 7:
-        ball_velocity[1] = -ball_velocity[1]
-    ```
-
-- Now the ball bounces until it reaches the far-left of the LED matrix. If this happens, the game should end, as the player hasn't managed to get the bat into place. Display a message to the player with the following code:
+	The interpreter is telling you that the statement you've just written is `True`. Look closely at the line. In English it would read as `Two is less than or equal to y, which is less than or equal to four.` This is a very handy way of determining if one number is between another two numbers or not.
+    
+- So to see if the ball is going to hit the bat, you can test whether the top of the bat (`y - 1`) is less than or equal to the ball's position (`ball_position[1]`), and the ball's position is less than the bottom edge of the bat (`y + 1`):
 
     ``` python
-    if ball_position[0] == 0:
-        sense.show_message("You Lose", text_colour=(255, 0, 0))
-        quit()
+    if ball_position[0] == 1 and y - 1 <= ball_position[1] <= y + 1:
+        ball_velocity[0] = -ball_velocity[0]
     ```
 
-- Run your code to watch the ball bounce and the game end.
+- Run your code and have a go at playing your own version of Pong.
+
+- If you get an error, then check your code against this full listing:
+
+    ``` python
+    from time import sleep
+    #from sense_hat import SenseHat
+    from sense_emu import SenseHat
+    sense = SenseHat()
+
+    y = 4
+    ball_position = [3, 3]
+    ball_velocity = [1, 1]
+
+    def draw_bat():
+        sense.set_pixel(0, y, 255, 255, 255)
+        sense.set_pixel(0, y+1, 255, 255, 255)
+        sense.set_pixel(0, y-1, 255, 255, 255)
+
+    def move_up(event):
+        global y
+        if y > 1 and event.action=='pressed':
+            y -= 1
+        print(event)
+
+    def move_down(event):
+        global y
+        if y < 6 and event.action=='pressed':
+            y += 1
+        print(event)
+
+    def draw_ball():
+        sense.set_pixel(ball_position[0], ball_position[1], 0, 0, 255)
+        ball_position[0] += ball_velocity[0]
+        ball_position[1] += ball_velocity[1]
+        if ball_position[0] == 7:
+            ball_velocity[0] = -ball_velocity[0]
+        if ball_position[1] == 0 or ball_position[1] == 7:
+            ball_velocity[1] = -ball_velocity[1]
+        if ball_position[0] == 0:
+            sense.show_message("You Lose", text_colour=(255, 0, 0))
+            quit()
+        if ball_position[0] == 1 and y - 1 <= ball_position[1] <= y+1:
+            ball_velocity[0] = -ball_velocity[0]
+
+    sense.stick.direction_up = move_up
+    sense.stick.direction_down = move_down
+
+    while True:
+        sense.clear(0, 0, 0)
+        draw_bat()
+        draw_ball()
+        sleep(0.25)
+    ```
 
