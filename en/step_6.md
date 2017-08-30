@@ -1,20 +1,43 @@
 ## Move the bat
 
-- You can now tell the Raspberry Pi what you want to happen when the Sense HAT joystick is used. You can do this by using what are known as **callbacks**. When the stick is pushed up, a `move_up` function will be called. When the stick is pushed down, a `move_down` function will be called. You haven't written those functions yet, but you will do that next. Start with the `move_up` callback:
+Let's make the bat move up and down when the joystick on the Sense HAT is moved.
 
-    ``` python
-    sense.stick.direction_up = move_up
-    ```
++ In your functions section, start a new function called `move_up(event)`.
 
-- Now above that line of code, you can write your function:
+This function will be passed some data called `event`. The event data it will receive is what has happened to the Sense HAT joystick. This will include the time that the stick was used, the direction it was pushed, and whether it was pressed, released, or held.
 
-    ``` python
-    def move_up(event)
-        if event.action == 'pressed':
-            y -= 1
-    ```
++ Inside the function, add an `if` statement to test if the `event.action` was 'pressed', or in other words the joystick was moved.
 
-    Did you notice the `event` parameter? When the stick is pressed, your function will be passed some information about the joystick `event`. This will include the time that the stick was used, the direction it was pushed, and whether it was pressed, released, or held.
+```python
+if event.action == 'pressed':
+```
+
+If the condition is met, we want the bat to move up. Upwards on our coordinates means making the number smaller - remember that the top pixel is 0.
+
++ If the `event.action` was 'pressed', take away 1 from the `bat_y` coordinate. Because the `bat_y` variable is defined outside of this function, we also have to tell Python to use the **global** version of this variable so that we are allowed to change it from inside the function.
+
+![Bat y moves up](images/move-bat-up.png)
+
+Remember that just like our `draw_bat` function, this function will do nothing until it is **called**.
+
++ At the bottom of the main program section, add this line of code to say _"When the Sense HAT stick is pushed up, call the function `move_up`."_
+
+``` python
+sense.stick.direction_up = move_up
+```
+
+If you run your code at this point, nothing will happen. This is because we need to continually check whether the player has moved the joystick, rather than only checking once when the program is run.
+
++ Put the two lines of code in your main program section inside an infinite loop
+
+[[[generic-python-while-true]]]
+
+If you have used Scratch before, this should be familiar as it is the same as a forever loop
+
+![Forever loop in Scratch](images/forever-scratch.png)
+
++ Save and run your code. Press the joystick on the Sense HAT up (or use the arrow keys on your keyboard if you are using the emulator).
+
 
 - To test out the code, you can draw the bat and clear the screen in a infinite loop. Add this to the bottom of your code:
 
