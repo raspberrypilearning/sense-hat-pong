@@ -1,41 +1,50 @@
-## Making a bat
+## Make a bat
 
-- Next, we want to draw the rest of the bat by illuminating the LEDs immediately above and below the one that's currently illuminated. To do this, we're going to make a function. Delete the `sense.set_pixel(0, y, 255, 255, 255)` line, and then type the following:
+Let's draw the rest of the bat by illuminating the LEDs immediately above and below the one that's currently illuminated. To do this, we will make a **function**.
 
-	```python
-	def draw_bat():
-	```
+[[[generic-python-simple-functions]]]
 
-- Now add three lines to your function to illuminate the LED at position `y`, `y + 1`, and `y - 1`:
++ **Indent** the line `sense.set_pixel(0, bat_y, white)` by putting your cursor at the start of the line and pressing the **tab** key.
 
-	```python
-	def draw_bat():
-		sense.set_pixel(0, y, 255, 255, 255)
-		sense.set_pixel(0, y + 1,255, 255, 255)
-		sense.set_pixel(0, y - 1,255, 255, 255)
-	```
++ On the line immediately above this line, start a function called `draw_bat`:
 
-- You can test your function works by **calling** it in the shell, which is the other IDLE window that should be open. Enter the following command:
+![Indented part of function](images/indented-in-function.png)
 
-	```python
-	draw_bat()
-	```
+The lines following the start of a function are indented to show that they are **inside** the function.
 
-	When you press `Enter`, the LEDs should be illuminated.
++ Add two more lines of code **inside** the function to illuminate the LEDs at positions `bat_y + 1`, and `bat_y - 1` as well.
 
-	![Three LEDs](images/3-led.png)
+--- hints ---
+--- hint ---
+The lines you need are very similar to the one you already have. What do you need to change in this line to make `bat_y + 1` lit instead of `bat_y`?
 
-	Your entire file should so far look like this:
+```python
+sense.set_pixel(0, bat_y, white)
+```
+--- /hint ---
 
-	```python
-	from sense_hat import SenseHat
-	sense = SenseHat()
+--- hint ---
+Here is how your function should look:
 
-	y = 4
+```python
+def draw_bat():
+	sense.set_pixel(0, bat_y, white)
+	sense.set_pixel(0, bat_y + 1, white)
+	sense.set_pixel(0, bat_y - 1, white)
+```
 
-	def draw_bat():
-		sense.set_pixel(0,y,255,255,255)
-		sense.set_pixel(0,y+1,255,255,255)
-		sense.set_pixel(0,y-1,255,255,255)
-	```
+--- /hint ---
 
+--- /hints ---
+
+If you run your code now, nothing will happen. The code you just wrote inside the function will not do anything at all until the function is **called**.
+
++ Add a line of code underneath the function and **not indented** to call the function.
+
+```python
+draw_bat()
+```
+
++ Run the code and check that three LEDs are now illuminated
+
+![Three LEDs](images/three-leds.png)

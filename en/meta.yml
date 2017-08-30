@@ -17,10 +17,10 @@ steps:
 - title: Introduction
 - title: What you will need
 - title: Connect to the Sense HAT
-- title: Lighting up an LED
-- title: Making a bat
-- title: Moving the bat
-- title: Creating a ball
-- title: Moving the ball
+- title: Light up an LED
+- title: Make a bat
+- title: Move the bat
+- title: Create a ball
+- title: Move the ball
 - title: Collision with the bat
-- title: What next?
+- title: "Challenge: stuff"

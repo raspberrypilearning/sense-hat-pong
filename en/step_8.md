@@ -1,4 +1,4 @@
-## Moving the ball
+## Move the ball
 
 To move the ball, you just need to change its `x` position by its `x` velocity, and its `y` position by its `y` velocity.
 
@@ -36,4 +36,3 @@ To move the ball, you just need to change its `x` position by its `x` velocity, 
     ```
 
 - Run your code to watch the ball bounce and the game end.
-

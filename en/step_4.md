@@ -1,4 +1,4 @@
-## Lighting up an LED
+## Light up an LED
 
 Games often use the coordinates `x` and `y` to determine where an object is on the display. `x` is used to set the horizontal position of an object, and `y` is used to set the vertical position of an object.
 
@@ -33,4 +33,4 @@ The bat will always be on the far-left column of pixels, so its `x` value will a
 
 + Save and run your code. A single LED should now be illuminated on the left side of the LED matrix.
 
-![Single LED](images/1-led.png)
+![Single LED lit](images/single-led.png)

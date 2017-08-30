@@ -1,4 +1,4 @@
-## Creating a ball
+## Create a ball
 
 The next step is to create the ball. But first, a little maths!
 
@@ -36,6 +36,5 @@ If you think about a moving ball, it has two essential properties. It has a posi
         draw_ball()
         sleep(0.25)
     ```
-    
-- Save your code by pressing `Ctrl + S` and then press `F5` to run it, and the ball should be drawn on the LED matrix.
 
+- Save your code by pressing `Ctrl + S` and then press `F5` to run it, and the ball should be drawn on the LED matrix.
