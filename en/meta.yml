@@ -16,7 +16,7 @@ site_areas: ''
 steps:
 - title: Introduction
 - title: What you will need
-- title: Make a Pong clone for your Sense HAT
+- title: Connect to the Sense HAT
 - title: Graphics and coordinates
 - title: Lighting up an LED
 - title: Making a bat
@@ -25,4 +25,3 @@ steps:
 - title: Moving the ball
 - title: Collision with the bat
 - title: What next?
-

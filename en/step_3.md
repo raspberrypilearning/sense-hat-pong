@@ -1,4 +1,4 @@
-## Make a Pong clone for your Sense HAT
+## Connect to the Sense HAT
 
 In this activity you will build your own Pong clone using your Raspberry Pi, a Sense HAT, and some Python code.
 
@@ -6,11 +6,10 @@ Pong was one of the earliest graphical games ever created, and could even be pla
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bzEBOjvA11w" frameborder="0" allowfullscreen></iframe>
 
-If you don't have a Sense HAT to use with this tutorial, you can use the Sense HAT emulator. To install this, open a terminal window by pressing `Ctrl + Alt + T`. Type the following command:
++ If you have a Sense HAT, attach it to your Raspberry Pi.
 
-``` bash
-sudo pip3 install sense-emu
-```
+[[[rpi-sensehat-attach]]]
 
-To start the emulator, you can type `sense_emu_gui` in the terminal window.
++ If you do not have a Sense HAT, you could create the project using the Sense HAT emulator.
 
+[[[rpi-sensehat-emulator]]]
