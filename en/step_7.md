@@ -8,14 +8,14 @@ A moving ball in two dimensions has two essential properties to consider:
 
 **Velocity** - the speed of the ball in a straight line. This can also be described by two numbers: how fast it's moving in the `x` dimension and how fast it's moving in the `y` dimension.
 
-+ Locate the `bat_y` variable in your program and underneath it, add two lists to describe the ball's properties:
++ Locate the `bat_y` variable in your program and, underneath it, add two lists to describe the ball's properties:
 
 ``` python
 ball_position = [3, 3]
 ball_velocity = [1, 1]
 ```
 
-+ Choose a colour for your ball and, next to your `white` variable, define a variable with your chosen colour value. We have used blue (0, 0, 255).
++ Choose a colour for your ball and, underneath your `white` variable, define a variable with your chosen colour value. We have used blue (0, 0, 255).
 
 + In your functions section, create a function called `draw_ball`:
 
@@ -33,7 +33,7 @@ The position on the `x` axis will be the 0th item in the `ball_position` list. T
 --- /hint ---
 
 --- hint ---
-Here is how your code should look:
+Here is how your code should look (assuming you also chose the colour blue for your ball).
 ``` python
 def draw_ball():
     sense.set_pixel(ball_position[0], ball_position[1], blue)
