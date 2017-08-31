@@ -18,21 +18,21 @@ ball_position[0] += ball_velocity[0]
 ---
 title: Answer
 ---
-You've seen this error before when you made the paddle. The ball moves across the LED matrix and then the program crashes with the error `ValueError: X position must be between 0 and 7`.
+You've seen the same error before when you moved the paddle. The ball moves across the LED matrix and then the program crashes with the error `ValueError: X position must be between 0 and 7`.
 
 The ball moved to an `x` position that was higher than 7, which was off the end of the LED matrix.
 --- /collapse ---
 
-+ Add a conditional, stating that if the `ball_position[0]` reaches `7`, its velocity gets reversed so it goes in the other direction:
++ Immediately after the line of code to move the ball, add a conditional, stating that if the `ball_position[0]` reaches `7`, its velocity gets reversed so it goes in the other direction:
 
 ``` python
 if ball_position[0] == 7:
 	ball_velocity[0] = -ball_velocity[0]
 ```
 
-+ Save and run your code again. The ball should bounce off the right edge of the matrix, but when it reaches the left edge, you'll get another error.
++ Save and run your code again. The ball should bounce off the right edge of the matrix, but when it reaches the left edge, you'll get another error because it is trying to go off the screen in that direction too!
 
-+ Add to the conditional to say that the ball should reverse direction if it's position is equal to 7 OR is equal to 0.
++ Add to the conditional to say that the ball should reverse direction if its position is equal to 7 OR is equal to 0.
 
 --- hints ---
 --- hint ---
@@ -44,18 +44,33 @@ Add your extra condition at the point highlighted in blue:
 --- hint ---
 Here is how your code should look:
 ``` python
-if ball_position[1] == 0 or ball_position[1] == 7:
-    ball_velocity[1] = -ball_velocity[1]
+if ball_position[0] == 7 or ball_position[0] == 0:
+    ball_velocity[0] = -ball_velocity[0]
 ```
 --- /hint ---
 --- /hints ---
 
-- Now the ball bounces until it reaches the far-left of the LED matrix. If this happens, the game should end, as the player hasn't managed to get the bat into place. Display a message to the player with the following code:
+--- collapse ---
+---
+title: Why does this work?
+---
+If the ball's velocity is 1, it's fairly easy to see that if the ball's x position equals 7, we want to change the x velocity to -1 to make it reverse - now each time the ball moves it will add on -1 to move the ball left across the matrix.
 
-    ``` python
-    if ball_position[0] == 0:
-        sense.show_message("You Lose", text_colour=(255, 0, 0))
-        quit()
-    ```
+But why does this work when the ball gets to the far left? Look at the code:
 
-- Run your code to watch the ball bounce and the game end.
+```python
+ball_velocity[0] = -ball_velocity[0]
+```
+
+The ball is travelling backwards, so its x velocity is -1. Substitute this value in and we get the following
+
+```python
+ball_velocity[0] = -(-1)
+```
+
+Minus (minus one) equals...plus one! So the ball begins travelling back the other way.
+--- /collapse ---
+
++ Save and run your program to check that your ball bounces happily from the left edge to the right edge.
+
+![Bouncing ball](images/bouncing-ball.gif)
