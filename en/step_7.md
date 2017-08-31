@@ -2,39 +2,47 @@
 
 The next step is to create the ball. But first, a little maths!
 
-If you think about a moving ball, it has two essential properties. It has a position and a velocity (speed in a straight line). As you're only working in two dimensions, both of these properties can be described by two numbers each:
+A moving ball in two dimensions has two essential properties to consider:
 
-    - The ball's position, like the bat, has a vertical and horizontal position.
-    - The ball's velocity can also be described by two numbers: how fast it's moving in the `x` dimension and how fast it's moving in the `y` dimension.
+**Position** - like the bat, the ball has a vertical and horizontal coordinate on the grid.
 
-- Where you set the `y` variable near the top of your program, you can now add the ball's properties. The easiest way to store these properties is to use lists. One list can store the position and the other can store the velocity:
+**Velocity** - the speed of the ball in a straight line. This can also be described by two numbers: how fast it's moving in the `x` dimension and how fast it's moving in the `y` dimension.
 
-    ``` python
-    ball_position = [3, 3]
-    ball_velocity = [1, 1]
-    ```
++ Locate the `bat_y` variable in your program and underneath it, add two lists to describe the ball's properties:
 
-- Now you can create a function to draw the ball:
+``` python
+ball_position = [3, 3]
+ball_velocity = [1, 1]
+```
 
-    ``` python
-    def draw_ball():
-    ```
++ Choose a colour for your ball and, next to your `white` variable, define a variable with your chosen colour value. We have used blue (0, 0, 255).
 
-- To begin with, you can add a line of code to the function to illuminate an LED. The position on the `x` axis will be the 0th item in the `ball_position` list. The `y` position will be the 1st item in the `ball_position` list. You can choose any colour you like for the ball, but in this example it's blue (`0, 0, 255`):
++ In your functions section, create a function called `draw_ball`:
 
-    ``` python
-    def draw_ball():
-        sense.set_pixel(ball_position[0], ball_position[1], 0, 0, 255)
-    ```
+``` python
+def draw_ball():
+```
 
-- In your `while True` loop, you can now call the function:
++ Add a line of code to the `draw_ball` function to illuminate an LED at the `ball_position`.
 
-    ``` python
-    while True:
-        sense.clear(0, 0, 0)
-        draw_bat()
-        draw_ball()
-        sleep(0.25)
-    ```
+[[[generic-python-list-index]]]
 
-- Save your code by pressing `Ctrl + S` and then press `F5` to run it, and the ball should be drawn on the LED matrix.
+--- hints ---
+--- hint ---
+The position on the `x` axis will be the 0th item in the `ball_position` list. The `y` position will be the 1st item in the `ball_position` list.
+--- /hint ---
+
+--- hint ---
+Here is how your code should look:
+``` python
+def draw_ball():
+    sense.set_pixel(ball_position[0], ball_position[1], blue)
+```
+--- /hint ---
+--- /hints ---
+
++ In your `while` loop, call the function `draw_ball`:
+
++ Save and run your code, and check that the ball is displayed on the LED matrix.
+
+![Draw the ball](images/draw-ball.png)
