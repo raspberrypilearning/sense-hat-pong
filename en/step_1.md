@@ -3,7 +3,7 @@
 ### What you will make
 In this activity you will create a Pong game using your Raspberry Pi and a Sense HAT, along with some Python code. Pong is one of the oldest graphical games ever created, and was originally played on an oscilloscope.
 
-<iframe src="https://trinket.io/embed/python/12d164b688?outputOnly=true&runOption=run&start=result" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://trinket.io/embed/python/546e658d41?outputOnly=true&runOption=run&start=result" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 Use the arrow keys to control your paddle. Don't let the ball touch the edge or you will lose the game!
 
@@ -11,8 +11,7 @@ Use the arrow keys to control your paddle. Don't let the ball touch the edge or 
 By coding a Pong game with your Raspberry Pi and Sense HAT, you will learn:
 
 - How to illuminate Sense HAT pixels
-- How to use curses to capture the joystick input
-- How to use threading in a game to keep a pixel moving
+- How to detect when the Sense HAT joystick is moved
 
 This resource covers elements from the following strands of the [Raspberry Pi Digital Making Curriculum](https://www.raspberrypi.org/curriculum/):
 
