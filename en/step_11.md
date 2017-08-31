@@ -1,4 +1,4 @@
-# Challenge: make it harder
+## Challenge: make it harder
 
 + Add a score which increases each time the ball bounces off the bat. Report the score to the player when they lose.
 
