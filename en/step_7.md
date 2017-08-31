@@ -4,8 +4,8 @@ The next step is to create the ball. But first, a little maths!
 
 If you think about a moving ball, it has two essential properties. It has a position and a velocity (speed in a straight line). As you're only working in two dimensions, both of these properties can be described by two numbers each:
 
-- The ball's position, like the bat, has a vertical and horizontal position.
-- The ball's velocity can also be described by two numbers: how fast it's moving in the `x` dimension and how fast it's moving in the `y` dimension.
+    - The ball's position, like the bat, has a vertical and horizontal position.
+    - The ball's velocity can also be described by two numbers: how fast it's moving in the `x` dimension and how fast it's moving in the `y` dimension.
 
 - Where you set the `y` variable near the top of your program, you can now add the ball's properties. The easiest way to store these properties is to use lists. One list can store the position and the other can store the velocity:
 

@@ -61,7 +61,7 @@ If you move the bat too far up, your program tries to draw the bat off the LED g
 
 ![Check bat isn't off the screen](images/check-not-off-screen.png)
 
-+ Now follow these steps again but with a few changes to make it possible to move your bat **down** the LED matrix.
++ Now follow these steps again but with a few changes to make it possible to move your bat **down** the LED matrix as well as up.
 
 --- hints ---
 --- hint ---
