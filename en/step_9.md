@@ -1,24 +1,46 @@
 ## Collision with the bat
 
-Now that the ball bounces 
+Now that the ball bounces in both directions, let's make it bounce off the bat.
 
-- You can start by making the ball bounce when it gets close to the horizontal position of the bat, no matter where the bat is vertically. Add this to your `draw_ball` function:
+The bat is always situated in the far left column of the LED grid, so its `x` coordinate is always `0`.
 
-    ``` python
-    if ball_position[0] == 1:
-        ball_velocity[0] = -ball_velocity[0]
-    ```
+The ball will bounce off the bat if the ball's `x` position is equal to `1` - i.e. it is in the row next to the bat.
 
-- Run this code and the ball will bounce forever.
++ Add this code to the end of the `draw_ball` function:
 
-- Now the conditional needs to check the position of the bat. Switch over to the shell window to test this out:
+``` python
+if ball_position[0] == 1:
+    ball_velocity[0] = -ball_velocity[0]
+```
+This code will cause the ball to reverse direction if it reaches an `x` coordinate of `1` - but this happens regardless of whether the bat is there or not!
 
-	``` python
-	>>> y = 3
-	>>> 2 <= y <= 4
-	```
+- Add to the condition to require the ball's `y` position to also (**and**) be anywhere between the top and bottom of the bat.
 
-	The interpreter is telling you that the statement you've just written is `True`. Look closely at the line. In English it would read as `Two is less than or equal to y, which is less than or equal to four.` This is a very handy way of determining if one number is between another two numbers or not.
+Remember that the bat is made up of 3 pixels, so this means the `y` coordinate of the ball can be anywhere **between** the top of the bat (`bat_y - 1`) and the bottom of the bat (`bat_y + 1`).
+
+--- hints ---
+--- hint ---
+Add your extra condition at the location highlighted blue:
+
+![Has it hit the bat?](images/hint-add-hit-bat.png)
+--- /hint ---
+
+--- hint ---
+To check whether a value is between two values, we can write a condition like this:
+
+```python
+1 <= x <= 10
+```
+
+This condition checks whether `x` is between 1 and 10 (inclusive) by asking first whether 1 is less than or equal to x, and then whether x is less than or equal to 10. Use this to determine whether your ball's `y` coordinate is between (`bat_y - 1`) and (`bat_y + 1`).
+--- /hint ---
+--- hint ---
+Here is how your finished code should look. The bit you should add is highlighted in blue:
+![Has it hit the bat?](images/hint-add-hit-bat-solution.png)
+--- /hint ---
+
+--- /hints ---
+
 
 - So to see if the ball is going to hit the bat, you can test whether the top of the bat (`y - 1`) is less than or equal to the ball's position (`ball_position[1]`), and the ball's position is less than the bottom edge of the bat (`y + 1`):
 
