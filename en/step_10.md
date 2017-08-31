@@ -1,17 +1,23 @@
-## Challenge: stuff
+## You lose
 
+If you miss the ball with the bat, at the moment it bounces off the far left wall. Let's change the code so that if the player misses the ball, they lose the game.
 
-- Now the ball bounces until it reaches the far-left of the LED matrix. If this happens, the game should end, as the player hasn't managed to get the bat into place. Display a message to the player with the following code:
++ Add another `if` statement at the end of your `draw_ball` function to check whether the ball's `x` position equals `0` - the far end of the screen.
 
-    ``` python
-    if ball_position[0] == 0:
-        sense.show_message("You Lose", text_colour=(255, 0, 0))
-        quit()
-    ```
++ If this condition is true, display the message "You lose".
 
-- Run your code to watch the ball bounce and the game end.
+--- hints ---
+--- hint ---
+Add your new `if` statement here. It will look very similar to the conditions you have already written.
 
+![You lose](images/lose-hint-add-code.png)
+--- /hint ---
 
-- Can you change variable values to make the game easier or harder, by changing the `sleep` period?
-- Can you add a score, which increases each time the ball bounces off the bat?
-- How about giving the player three lives, and making them lose one each time they miss the ball?
+--- hint ---
+Here is how your code should look. The part to add is highlighted in blue:
+
+![You lose](images/you-lose-hint-solution.png)
+--- /hint ---
+--- /hints ---
+
++ Save and run your code. Check that if you miss the ball, the message "You lose" appears. The game will restart after the message has been displayed.

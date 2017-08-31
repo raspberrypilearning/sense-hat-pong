@@ -23,4 +23,5 @@ steps:
 - title: Create a ball
 - title: Move the ball
 - title: Collision with the bat
-- title: "Challenge: stuff"
+- title: You lose
+- title: "Challenge: make it harder"

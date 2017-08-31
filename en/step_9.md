@@ -42,3 +42,5 @@ Here is how your finished code should look. The bit you should add is highlighte
 --- /hint ---
 
 --- /hints ---
+
++ Save and run your code and check that the ball bounces off the bat when the bat only when the bat is in the correct position.
