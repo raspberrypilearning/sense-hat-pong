@@ -27,7 +27,7 @@ The ball moved to an `x` position that was higher than 7, which was off the end 
 
 ``` python
 if ball_position[0] == 7:
-	ball_velocity[0] = -ball_velocity[0]
+    ball_velocity[0] = -ball_velocity[0]
 ```
 
 + Save and run your code again. The ball should bounce off the right edge of the matrix, but when it reaches the left edge, you'll get another error because it is trying to go off the screen in that direction too!
@@ -54,7 +54,7 @@ if ball_position[0] == 7 or ball_position[0] == 0:
 ---
 title: Why does this work?
 ---
-If the ball's velocity is 1, it's fairly easy to see that if the ball's x position equals 7, we want to change the x velocity to -1 to make it reverse - now each time the ball moves it will add on -1 to move the ball left across the matrix.
+The ball's velocity starts off as 1. If the ball's x position equals 7, we want to change the x velocity to -1 to make it reverse - now each time the ball moves the code will be adding on -1 to move the ball left across the matrix.
 
 But why does this work when the ball gets to the far left? Look at the code:
 
@@ -62,15 +62,36 @@ But why does this work when the ball gets to the far left? Look at the code:
 ball_velocity[0] = -ball_velocity[0]
 ```
 
-The ball is travelling backwards, so its x velocity is -1. Substitute this value in and we get the following
+The ball is travelling left, so its x velocity is -1. Substitute this value in and we get the following
 
 ```python
 ball_velocity[0] = -(-1)
 ```
 
-Minus (minus one) equals...plus one! So the ball begins travelling back the other way.
+Minus (minus one) equals...plus one! So the velocity is now 1, and the ball begins travelling back the other way.
 --- /collapse ---
 
 + Save and run your program to check that your ball bounces happily from the left edge to the right edge.
 
 ![Bouncing ball](images/bouncing-ball.gif)
+
++ Now follow these steps again but with a few changes to make your ball move according to its `y` velocity as well.
+
+--- hints ---
+--- hint ---
+Begin by adding one line of code at the end of the `draw_ball` function to make your ball move according to `ball_position[1]` and `ball_velocity[1]`. This line is almost the same as the code you used for moving the `x` coordinate of the ball.
+
+--- /hint ---
+
+--- hint ---
+Next, add a conditional to say that if the ball's `y` position gets to 0 or 7, it should reverse direction. Again, this is very similar to the code you added for the `x` position, with a few changes.
+--- /hint ---
+
+--- hint ---
+The highlighted code is the part you should add:
+
+![Moving the ball up](images/hint-move-ball.png)
+
+--- /hint ---
+
+--- /hints ---

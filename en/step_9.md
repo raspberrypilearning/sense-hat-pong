@@ -1,6 +1,6 @@
 ## Collision with the bat
 
-Your game is only two more lines away from being finished, but the next part takes some explaining.
+Now that the ball bounces 
 
 - You can start by making the ball bounce when it gets close to the horizontal position of the bat, no matter where the bat is vertically. Add this to your `draw_ball` function:
 
@@ -19,7 +19,7 @@ Your game is only two more lines away from being finished, but the next part tak
 	```
 
 	The interpreter is telling you that the statement you've just written is `True`. Look closely at the line. In English it would read as `Two is less than or equal to y, which is less than or equal to four.` This is a very handy way of determining if one number is between another two numbers or not.
-    
+
 - So to see if the ball is going to hit the bat, you can test whether the top of the bat (`y - 1`) is less than or equal to the ball's position (`ball_position[1]`), and the ball's position is less than the bottom edge of the bat (`y + 1`):
 
     ``` python
@@ -81,4 +81,3 @@ Your game is only two more lines away from being finished, but the next part tak
         draw_ball()
         sleep(0.25)
     ```
-
