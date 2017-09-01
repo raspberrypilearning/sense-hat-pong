@@ -31,6 +31,36 @@ The bat will always be on the far-left column of pixels, so its `x` value will a
 
 [[[rpi-sensehat-single-pixel]]]
 
+--- hints ---
+--- hint ---
+First, create a variable with the name `white` and set it equal to (255, 255, 255) like this:
+
+```python
+white = (255, 255, 255)
+```
+--- /hint ---
+
+--- hint ---
+Now on the line underneath, create another variable just like you did for the colour `white`, except this time the name will be `bat_y` and the value will be 4.
+--- /hint ---
+
+--- hint ---
+Your finished code should look like this:
+
+```python
+from sense_hat import SenseHat
+sense = SenseHat()
+
+white = (255, 255, 255)
+
+bat_y = 4
+
+sense.set_pixel(0, bat_y, white)
+```
+--- /hint---
+
+--- /hints ---
+
 + Save and run your code. A single LED should now be illuminated on the left side of the LED matrix.
 
 ![Single LED lit](images/single-led.png)
