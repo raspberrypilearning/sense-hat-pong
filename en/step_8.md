@@ -90,7 +90,7 @@ Next, add a conditional to say that if the ball's `y` position gets to 0 or 7, i
 --- hint ---
 The highlighted code is the part you should add:
 
-![Moving the ball up](images/hint-move-ball.png)
+![Moving the ball up](images/hint-draw-ball.png)
 
 --- /hint ---
 

@@ -2,7 +2,7 @@
 
 Let's make the bat move up and down when the joystick on the Sense HAT is moved.
 
-+ In your functions section, start a new function called `move_up(event)`
++ In your functions section, define a new function called `move_up(event)`
 
 This function will be passed some data called `event`. The event data it will receive is what has happened to the Sense HAT joystick. This will include the time that the stick was used, the direction it was pushed, and whether it was pressed, released, or held.
 
