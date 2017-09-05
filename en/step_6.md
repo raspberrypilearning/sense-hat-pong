@@ -12,7 +12,7 @@ Some data called `event` will be passed to this function. The event data the fun
 if event.action == 'pressed':
 ```
 
-If the condition is met, we want the bat to move up. Upwards in the coordinate system on our LED screen means making the y coordinate smaller - remember that the top pixel's y coordinate is `0`.
+If the condition is met, we want the bat to move upwards. Upwards in the coordinate system on our LED screen means making the y coordinate smaller - remember that the top pixel's y coordinate is `0`.
 
 + If the `event.action` was `'pressed'`, take away `1` from the `bat_y` coordinate. This will allow us to redraw the bat at a different position. **Note:** because the `bat_y` variable is defined outside of this function, we also have to tell Python to use the **global** version of this variable so that we are allowed to change it from inside the function.
 
@@ -40,7 +40,7 @@ If you have used Scratch before, this should be familiar, as it is the same as u
 
 ![Move the bat](images/move-the-bat.gif)
 
-Oh dear, the result looks a bit like you are smudging the bat up the screen rather than moving it! We need to clear the screen and wait a while before each time we draw the bat in the infinite loop.
+Oh dear — the result looks a bit like you are smudging the bat upwards on the screen rather than moving it! We need to clear the screen and wait a while before each time we draw the bat in the infinite loop.
 
 
 + Add this line to your infinite loop to clear the LED matrix each time before the bat is drawn.
@@ -55,7 +55,7 @@ sense.clear(0, 0, 0)
 
 + Save and run your code again. Try moving the bat and check whether it now moves up as expected.
 
-If you move the bat too far up, your program tries to draw the bat outside the LED screen and the program crashes. You need to make sure that the value of the `bat_y` variable is never less than `1`, so that the bat remains on the grid at all times.
+If you move the bat too far upwards, your program tries to draw it outside the LED screen, and then the program crashes. You need to make sure that the value of the `bat_y` variable is never less than `1`, so that the bat remains on the grid at all times.
 
 + Add code to your `move_up` function to make sure the `bat_y` variable's value can never become smaller than `1`.
 
