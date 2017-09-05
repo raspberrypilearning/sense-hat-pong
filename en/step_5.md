@@ -1,44 +1,67 @@
-## Lighting up an LED
+## Make a bat
 
-Let's start our Pong game by lighting up a single LED, and then a few more to create a bat.
+Let's draw the rest of the bat by illuminating the LEDs immediately above and below the one that's currently illuminated. To do this, we will make a **function**.
 
-- Click on `Menu` > `Programming` > `Python 3 (IDLE)`. Then, in the window that opens up, click on `File` and `New File`. The second window that opens is where you will write your code.
+[[[generic-python-simple-functions]]]
 
-- First, you'll need to import the `sense_hat` and `time` modules. Type the following into your file:
++ **Indent** the line `sense.set_pixel(0, bat_y, white)` by putting your cursor at the start of the line and pressing the **tab** key.
 
-	```python
-	from sense_hat import SenseHat
-    from time import sleep
-    
-	sense = SenseHat()
-	```
++ On the line immediately above this line, start a function called `draw_bat`:
 
-- If you are using the emulator as opposed to the physical Sense HAT, you need to change one line, so that the above code reads:
+![Indented part of function](images/indented-in-function.png)
 
-    ``` python
-    from sense_emu import SenseHat
-    from time import sleep
+The lines following the start of a function are indented to show that they are **inside** the function.
 
-    sense = SenseHat()
-    ```
+You could add a **comment** just above the start of your function to show that this section will contain your functions — we will be writing some more later on.
 
-- The bat will always be on the far-left column of pixels, so its `x` value will always be `0`, but the `y` value will change as you move the bat up and down. Start by setting the `y` value to 4, by adding this line:
+```python
+# Functions ----------------
+```
 
-	```python
-	y = 4
-	```
++ Add two more lines of code inside the function to illuminate the LEDs at positions `bat_y + 1`, and `bat_y - 1` as well.
 
-- You can now illuminate your first LED using the following line of Python:
+--- hints ---
+--- hint ---
+The lines you need are very similar to the one you already have. What do you need to change in this line to make `bat_y + 1` lit instead of `bat_y`?
 
-	```python
-	sense.set_pixel(0, y, 255, 255, 255)
-	```
+```python
+sense.set_pixel(0, bat_y, white)
+```
+--- /hint ---
 
-- The values `(0, y, 255, 255, 255)` indicate the `x` and `y` position of the LED, and the colour of light it should emit. `255, 255, 255` is white.
+--- hint ---
+Don't forget to indent your new lines of code as well so that they are inside the function.
+--- /hint ---
 
-- Save your file by holding down the `Ctrl` key and then pressing the `S` key. Call it  `pong.py`, then run it by pressing `F5`.
+--- hint ---
+Here is how your function should look:
 
-	A single LED should now be illuminated. 
+```python
+# Functions ----------------
+def draw_bat():
+	sense.set_pixel(0, bat_y, white)
+	sense.set_pixel(0, bat_y + 1, white)
+	sense.set_pixel(0, bat_y - 1, white)
+```
 
-![Single LED](images/1-led.png)
+--- /hint ---
 
+--- /hints ---
+
+If you run your code now, nothing will happen. The code you just wrote inside the function will not do anything at all until the function is **called**.
+
++ Add a new comment underneath the function to show that this section is where the main program starts. Make sure this comment is **not indented**.
+
+```python
+# Main program -------------
+```
+
++ Add this line of code in the main program section to call the function:
+
+```python
+draw_bat()
+```
+
++ Run the code and check that three LEDs are now illuminated.
+
+![Three LEDs](images/three-leds.png)

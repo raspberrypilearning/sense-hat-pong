@@ -2,15 +2,21 @@
 
 ### Hardware
 
-* Sense HAT
+* Raspberry Pi
+* Sense HAT (If you do not have a Sense HAT, you could create the project in a web browser using the [Sense HAT emulator](https://trinket.io/sense-hat), or use the emulator software on you Pi.)
 
 ### Software
+You will need the [latest version of Raspbian](https://www.raspberrypi.org/downloads/), which already includes the following software packages:
 
-#### Software installation
+- Python 3
+- Sense HAT for Python 3
 
-No additional software is required to use this resource. However, if you don't have access to a Sense HAT, you can use our emulator. To install it, enter the command below in a terminal:
+If for any reason you need to install a package manually, follow these instructions:
 
-``` bash
-sudo pip3 install sense-emu
+[[[rpi-install-software]]]
+
+Type this command into the terminal to install the Sense HAT package:
+
+```bash
+sudo apt-get install sense-hat
 ```
-

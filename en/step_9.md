@@ -1,39 +1,46 @@
-## Moving the ball
+## Collision with the bat
 
-To move the ball, you just need to change its `x` position by its `x` velocity, and its `y` position by its `y` velocity.
+Now that the ball bounces in both directions, let's make it bounce off the bat.
 
-- Add these two lines to your `draw_ball` function:
+The bat is always situated in the far left column of the LED grid, so its `x` coordinate is always `0`.
 
-    ``` python
-    ball_position[0] += ball_velocity[0]
-    ball_position[1] += ball_velocity[1]
-    ```
+The ball will bounce off the bat if it is in the row next to the bat — that is, if the ball's `x` position is equal to `1`.
 
-	Now, when you run your code, the ball should move across the LED matrix, and then your program will crash with the error `ValueError: X position must be between 0 and 7`. What happened? The ball gained an `x` position that was higher than 7, and this is obviously impossible.
+![Ball bounce x](images/ball-bounce-x.png)
 
-- You can handle this in your code by adding a conditional, stating that if the `ball_position[0]` reaches `7`, its velocity gets reversed so it goes in the other direction:
++ Add this code to the end of the `draw_ball` function:
 
-	``` python
-	if ball_position[0] == 7:
-    	ball_velocity[0] = -ball_velocity[0]
-	```
+``` python
+if ball_position[0] == 1:
+    ball_velocity[0] = -ball_velocity[0]
+```
+This code will cause the ball to reverse direction if it reaches an `x` coordinate of `1`. But now the ball reverses regardless of whether the bat is there or not!
 
-- If you can identify the bug that still remains, try and fix it before you run your code. Otherwise, just run your program and look at the error, then try to fix it before moving on.
+- Add to the condition to require the ball's `y` position to also (**and**) be anywhere between the top and bottom of the bat.
 
-- The error you get should say `ValueError: Y position must be between 0 and 7`. This means the `y` position of the ball went outside the bounds of the LED matrix. It needs to stay between `0` and `7`. Another conditional can fix this:
+Remember that the bat is made up of three pixels. So for the ball to 'bounce off' the bat, the `y` coordinate of the ball can be anywhere **between** the top of the bat (`bat_y - 1`) and the bottom of the bat (`bat_y + 1`).
 
-    ``` python
-    if ball_position[1] == 0 or ball_position[1] == 7:
-        ball_velocity[1] = -ball_velocity[1]
-    ```
+--- hints ---
+--- hint ---
+Add your extra condition at the location highlighted blue:
 
-- Now the ball bounces until it reaches the far-left of the LED matrix. If this happens, the game should end, as the player hasn't managed to get the bat into place. Display a message to the player with the following code:
+![Has it hit the bat?](images/hint-add-hit-bat.png)
+--- /hint ---
 
-    ``` python
-    if ball_position[0] == 0:
-        sense.show_message("You Lose", text_colour=(255, 0, 0))
-        quit()
-    ```
+--- hint ---
+To check whether a value is between two values, we can write a condition like this:
 
-- Run your code to watch the ball bounce and the game end.
+```python
+1 <= x <= 10
+```
 
+This condition checks whether `x` is between `1` and `10` (inclusive) by asking first whether `1` is less than or equal to `x`, and then whether `x` is less than or equal to `10`. Use a similar line of code to determine whether your ball's `y` coordinate is between `bat_y - 1` and `bat_y + 1`.
+--- /hint ---
+--- hint ---
+Here is how your finished code should look. The bit you should add is highlighted in blue:
+![Has it hit the bat?](images/hint-add-hit-bat-solution.png)
+--- /hint ---
+
+--- /hints ---
+
++ Save and run your code. Check that the ball bounces off the bat only when the bat is in the correct position!
