@@ -4,6 +4,6 @@
 
 [[[rpi-sensehat-attach]]]
 
-+ If you do not have a Sense HAT, you could create the project using the Sense HAT emulator.
++ If you do not have a Sense HAT, you can create the project using the Sense HAT emulator.
 
 [[[rpi-sensehat-emulator]]]
