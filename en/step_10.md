@@ -8,15 +8,19 @@ If you miss the ball with the bat, at the moment it bounces off the far left wal
 
 --- hints ---
 --- hint ---
+
 Your new if statement will look very similar to the conditions you have already written. Add it here:
 
 ![You lose](images/lose-hint-add-code.png)
+
 --- /hint ---
 
 --- hint ---
+
 Here is how your code should look. The part to add is highlighted in blue:
 
 ![You lose](images/you-lose-hint-solution.png)
+
 --- /hint ---
 --- /hints ---
 

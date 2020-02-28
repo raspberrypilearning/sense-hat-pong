@@ -65,11 +65,13 @@ If you move the bat too far upwards, your program tries to draw it outside the L
 
 --- hints ---
 --- hint ---
+
 Begin by writing a `move_down(event)` function containing instructions for when the bat should be moved downwards. This time, you should add `1` to `bat_y`, but only if the value of `bat_y` is less than `6`, so that the bat remains on the screen.
 
 --- /hint ---
 
 --- hint ---
+
 You will need to use another line of code in your main program section to call the `move_down` function when the joystick is moved down.
 
 ``` python
@@ -79,6 +81,7 @@ sense.stick.direction_down = move_down
 --- /hint ---
 
 --- hint ---
+
 Here is how your code should look:
 
 ![Moving the bat down](images/hint-move-down.png)

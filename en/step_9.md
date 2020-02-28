@@ -14,6 +14,7 @@ The ball will bounce off the bat if it is in the row next to the bat — that is
 if ball_position[0] == 1:
     ball_velocity[0] = -ball_velocity[0]
 ```
+
 This code will cause the ball to reverse direction if it reaches an `x` coordinate of `1`. But now the ball reverses regardless of whether the bat is there or not!
 
 - Add to the condition to require the ball's `y` position to also (**and**) be anywhere between the top and bottom of the bat.
@@ -22,12 +23,15 @@ Remember that the bat is made up of three pixels. So for the ball to 'bounce off
 
 --- hints ---
 --- hint ---
+
 Add your extra condition at the location highlighted blue:
 
 ![Has it hit the bat?](images/hint-add-hit-bat.png)
+
 --- /hint ---
 
 --- hint ---
+
 To check whether a value is between two values, we can write a condition like this:
 
 ```python
@@ -35,10 +39,14 @@ To check whether a value is between two values, we can write a condition like th
 ```
 
 This condition checks whether `x` is between `1` and `10` (inclusive) by asking first whether `1` is less than or equal to `x`, and then whether `x` is less than or equal to `10`. Use a similar line of code to determine whether your ball's `y` coordinate is between `bat_y - 1` and `bat_y + 1`.
+
 --- /hint ---
 --- hint ---
+
 Here is how your finished code should look. The bit you should add is highlighted in blue:
+
 ![Has it hit the bat?](images/hint-add-hit-bat-solution.png)
+
 --- /hint ---
 
 --- /hints ---
