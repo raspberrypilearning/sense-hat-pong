@@ -29,15 +29,19 @@ def draw_ball():
 
 --- hints ---
 --- hint ---
+
 The position on the `x` axis will be the zeroth item in the `ball_position` list. The `y` position will be the first item in the `ball_position` list.
+
 --- /hint ---
 
 --- hint ---
+
 Here is how your code should look (assuming you also chose the colour blue for your ball):
 ``` python
 def draw_ball():
     sense.set_pixel(ball_position[0], ball_position[1], blue)
 ```
+
 --- /hint ---
 --- /hints ---
 

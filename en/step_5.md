@@ -22,18 +22,23 @@ You could add a **comment** just above the start of your function to show that t
 
 --- hints ---
 --- hint ---
+
 The lines you need are very similar to the one you already have. What do you need to change in this line to make `bat_y + 1` lit instead of `bat_y`?
 
 ```python
 sense.set_pixel(0, bat_y, white)
 ```
+
 --- /hint ---
 
 --- hint ---
+
 Don't forget to indent your new lines of code as well so that they are inside the function.
+
 --- /hint ---
 
 --- hint ---
+
 Here is how your function should look:
 
 ```python
