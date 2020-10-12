@@ -1,105 +1,105 @@
-## Move the ball
+## Verplaats de bal
 
-To get the ball moving, you need to change its `x` position by its `x` velocity, and its `y` position by its `y` velocity.
+Om de bal in beweging te krijgen, moet je zijn `x` positie veranderen met zijn `x` snelheid, en zijn `y` positie met zijn `y` snelheid.
 
-The first coordinate in each list you just created represents the ball's `x` property — so `ball_position[0]` is the current `x` coordinate, and `ball_velocity[0]` is how fast it should move in the `x` direction.
+De eerste coördinaat in elke lijst die je zojuist hebt gemaakt, vertegenwoordigt de `x` eigenschap van de bal — dus `bal_positie[0]` is de huidige `x` coördinaat en `bal_snelheid[0]` is hoe snel deze in de richting van `x` moet bewegen.
 
-+ Inside your `draw_ball` function, add this line of code to add the ball's velocity (currently `1`) to the ball's current position in the `x` direction.
++ Voeg binnen jouw `teken_bal` functie deze coderegel toe om de snelheid van de bal (momenteel `1`) toe te voegen aan de huidige positie van de bal in de richting van `x`.
 
 ``` python
-ball_position[0] += ball_velocity[0]
+bal_positie[0] += bal_snelheid[0]
 ```
 
-![Velocity x](images/velocity-x.png)
+![Snelheid x](images/velocity-x.png)
 
-+ Save and run your code. The ball will move across the screen until it reaches the edge, and then the program will crash. Why do you think this happens?
++ Bewaar en voer je code uit. De bal beweegt over het scherm totdat deze de rand bereikt en het programma crasht. Waarom denk je dat dit gebeurt?
 
 --- collapse ---
 ---
-title: Answer
+title: Antwoord
 ---
 
-You've probably seen the same error before when you moved the paddle. The ball moves across the LED matrix and then the program crashes with the error `ValueError: X position must be between 0 and 7`.
+Je hebt waarschijnlijk dezelfde fout eerder gezien toen je het batje bewoog. De bal beweegt over de LED-matrix en vervolgens crasht het programma met de fout `ValueError: X position must be between 0 and 7`.
 
-The ball moved to an `x` position larger than 7, which is outside of the LED matrix.
+De bal verplaatst naar een `x` positie groter dan 7, die buiten de LED-matrix ligt.
 
 --- /collapse ---
 
-+ Immediately after the line of code to move the ball, add a conditional stating that, if the `ball_position[0]` reaches `7`, its velocity gets reversed so it goes in the other direction:
++ Voeg onmiddellijk na de coderegel om de bal te verplaatsen, een voorwaarde toe dat, als de `bal_positie[0]` `7` bereikt, de snelheid wordt omgekeerd, zodat deze in de andere richting gaat:
 
 ``` python
-if ball_position[0] == 7:
-    ball_velocity[0] = -ball_velocity[0]
+if bal_positie[0] == 7:
+    bal_snelheid[0] = -bal_snelheid[0]
 ```
 
-+ Save and run your code again. The ball should bounce off the right edge of the matrix — but when it reaches the left edge, you'll get another error because it is still trying to move off the screen in that direction!
++ Sla op en voer jouw code opnieuw uit. De bal zou tegen de rechterrand van de matrix moeten stuiteren — maar wanneer deze de linkerrand bereikt, krijg je nog een fout omdat hij nog steeds in die richting van het scherm af probeert te bewegen!
 
-+ Add to the conditional to say that the ball should reverse direction if its position is equal to `7` **or** is equal to `0`.
++ Voeg aan de voorwaarde toe dat de bal van richting moet veranderen als zijn positie gelijk is aan `7` **of** gelijk is aan `0`.
 
 --- hints --- --- hint ---
 
-Add your extra condition at the point highlighted in blue:
+Voeg je extra voorwaarde toe op het blauw gemarkeerde punt:
 
-![Add to conditional](images/add-to-conditional.png)
+![Toevoegen aan voorwaarde](images/add-to-conditional.png)
 
 --- /hint ---
 
 --- hint ---
 
-Here is how your code should look:
+Dit is hoe je code eruit zou moeten zien:
 ``` python
-if ball_position[0] == 7 or ball_position[0] == 0:
-    ball_velocity[0] = -ball_velocity[0]
+if bal_positie[0] == 7 or bal_positie[0] == 0:
+    bal_snelheid[0] = -bal_snelheid[0]
 ```
 
---- /hint --- --- /hints ---
+--- / hint --- --- / hints ---
 
 --- collapse ---
 ---
-title: Why does this work?
+titel: Waarom werkt dit?
 ---
 
-The ball's velocity starts off as `1`. If the ball's `x` position equals `7`, we change the `x` velocity to `-1` to make the ball reverse. Then the code will be adding `-1` to the ball's `x` position to move the ball to the left across the matrix.
+De snelheid van de bal begint als `1`. Als de `x` positie van de bal gelijk is aan `7`, veranderen we de snelheid van `x` in `-1` om de bal om te keren. Vervolgens voegt de code `-1` toe aan de `x` positie van de bal om de bal naar links over de matrix te verplaatsen.
 
-But why does this work when the ball gets all the way to the left? Look at the code:
-
-```python
-ball_velocity[0] = -ball_velocity[0]
-```
-
-When the ball is travelling leftward, its `x` velocity is `-1`. When we insert this value in the line of code, we get the following:
+Maar waarom werkt dit als de bal helemaal aan de linkerkant komt? Bekijk de code:
 
 ```python
-ball_velocity[0] = -(-1)
+bal_snelheid[0] = -bal_snelheid[0]
 ```
 
-Minus (minus one) equals...plus one! So the velocity is now `1`, and the ball begins travelling back the other way.
+Wanneer de bal naar links beweegt, is de snelheid van `x` `-1`. Wanneer we deze waarde in de coderegel invoegen, krijgen we het volgende:
+
+```python
+bal_snelheid[0] = -(-1)
+```
+
+Min (min één) is gelijk aan... plus één! Dus de snelheid is nu `1` en de bal begint de andere kant op te reizen.
 
 --- /collapse ---
 
-+ Save and run your program to check that your ball bounces happily from the left edge to the right edge.
++ Sla op en voer je programma uit om te controleren of je bal vrolijk van de linkerrand naar de rechterrand stuitert.
 
-![Bouncing ball](images/bouncing-ball.gif)
+![Stuiterbal](images/bouncing-ball.gif)
 
-+ Now make your ball move according to its `y` velocity as well as its `x` velocity by following these steps again with a few changes.
++ Laat je bal nu bewegen volgens zijn `y` snelheid en zijn `x` snelheid door deze stappen opnieuw te volgen met een paar veranderingen.
 
 --- hints --- --- hint ---
 
-Begin by adding one line of code at the bottom of the `draw_ball` function to make your ball move according to `ball_position[1]` and `ball_velocity[1]`. This line is almost the same as the code you used for changing the `x` coordinate of the ball.
+Begin met het toevoegen van een coderegel onderaan de functie `teken_bal` om je bal te laten bewegen volgens `bal_positie[1]` en `bal_snelheid[1]`. Deze regel is bijna hetzelfde als de code die je hebt gebruikt voor het wijzigen van de `x` coördinaat van de bal.
 
 --- /hint ---
 
 --- hint ---
 
-Next, add a conditional to say that if the ball's `y` position gets to `0` or `7`, the ball should reverse direction. Again, to do this you just need to use the code you added for the `x` position with a few changes.
+Voeg vervolgens een voorwaarde toe om te zeggen dat als de `y` positie van de bal `0` of `7` is, de bal van richting moet veranderen. Nogmaals, om dit te doen, hoef je alleen de code te gebruiken die je hebt toegevoegd voor de `x` positie met een paar wijzigingen.
 
 --- /hint ---
 
 --- hint ---
 
-The highlighted code is the part you should add:
+De gemarkeerde code is het onderdeel dat je moet toevoegen:
 
-![Moving the ball up](images/hint-draw-ball.png)
+![De bal omhoog bewegen](images/hint-draw-ball.png)
 
 --- /hint ---
 
