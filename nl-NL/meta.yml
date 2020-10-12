@@ -1,0 +1,30 @@
+---
+title: Sense HAT Pong
+hero_image: images/banner.png
+description: Maak een Pong-spel voor één speler met je Raspberry Pi en Sense HAT
+original_url: https://raspberrypi.org/learning/sense-hat-pong
+theme: blue
+duration: 2
+listed: true
+ingredient: false
+copyedit: true
+curriculum: 3, design-0, programming-3, phys-comp-1, manufacture-0, community-0
+interests: games
+technologies: python, sense-hat
+site_areas: projects
+hardware: sense-hat
+software: python
+version: 4
+last_tested: 2017/01/01
+steps:
+  - title: Inleiding
+  - title: Wat heb je nodig
+  - title: Maak verbinding met de Sense HAT
+  - title: Verlicht een LED
+  - title: Maak een batje
+  - title: Verplaats het batje
+  - title: Maak een bal
+  - title: Verplaats de bal
+  - title: Botsing met het batje
+  - title: Jij verliest
+  - title: "Uitdaging: voeg meer functies toe"
