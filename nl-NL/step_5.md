@@ -1,71 +1,71 @@
-## Make a bat
+## Maak een batje
 
-Let's draw the rest of the bat by illuminating the LEDs immediately above and below the one that's currently illuminated. To do this, we will make a **function**.
+Laten we de rest van het batje tekenen door de LED's direct boven en onder de LED te verlichten die momenteel wordt verlicht. Om dit te doen, maken we een **functie**.
 
 [[[generic-python-simple-functions]]]
 
-+ **Indent** the line `sense.set_pixel(0, bat_y, white)` by putting your cursor at the start of the line and pressing the **tab** key.
++ Zorg voor **inspringen** van de regel `sense.set_pixel (0, bat_y, wit)` door je cursor aan het begin van de regel te plaatsen en op de **tab** toets te drukken.
 
-+ On the line immediately above this line, start a function called `draw_bat`:
++ Start op de regel direct boven deze regel een functie genaamd `teken_batje`:
 
-![Indented part of function](images/indented-in-function.png)
+![Ingesprongen deel van functie](images/indented-in-function.png)
 
-The lines following the start of a function are indented to show that they are **inside** the function.
+De regels na het begin van een functie zijn ingesprongen om aan te geven dat ze **binnen** de functie zitten.
 
-You could add a **comment** just above the start of your function to show that this section will contain your functions — we will be writing some more later on.
+Je zou een **commentaar** net boven het begin van je functie kunnen toevoegen om aan te geven dat deze sectie je functies zal bevatten — we zullen er later nog wat meer schrijven.
 
 ```python
-# Functions ----------------
+# Functies ----------------
 ```
 
-+ Add two more lines of code inside the function to illuminate the LEDs at positions `bat_y + 1`, and `bat_y - 1` as well.
++ Voeg nog twee regels code toe binnen de functie om de LED's op posities `bat_y + 1`en `bat_y - 1` te verlichten.
 
 --- hints --- --- hint ---
 
-The lines you need are very similar to the one you already have. What do you need to change in this line to make `bat_y + 1` lit instead of `bat_y`?
+De regels die je nodig hebt, lijken erg op die welke je al hebt. Wat moet je in deze regel veranderen om `bat_y + 1` te verlichten in plaats van `bat_y`?
 
 ```python
-sense.set_pixel(0, bat_y, white)
+sense.set_pixel(0, bat_y, wit)
 ```
 
 --- /hint ---
 
 --- hint ---
 
-Don't forget to indent your new lines of code as well so that they are inside the function.
+Vergeet niet je nieuwe coderegels ook te laten inspringen zodat ze binnen de functie vallen.
 
 --- /hint ---
 
 --- hint ---
 
-Here is how your function should look:
+Dit is hoe jouw functie eruit zou moeten zien:
 
 ```python
-# Functions ----------------
-def draw_bat():
-    sense.set_pixel(0, bat_y, white)
-    sense.set_pixel(0, bat_y + 1, white)
-    sense.set_pixel(0, bat_y - 1, white)
+# Functies ----------------
+def teken_batje():
+    sense.set_pixel(0, bat_y, wit)
+    sense.set_pixel(0, bat_y + 1, wit)
+    sense.set_pixel(0, bat_y - 1, wit)
 ```
 
 --- /hint ---
 
 --- /hints ---
 
-If you run your code now, nothing will happen. The code you just wrote inside the function will not do anything at all until the function is **called**.
+Als je jouw code nu uitvoert, gebeurt er niets. De code die je zojuist in de functie hebt geschreven, doet helemaal niets totdat de functie wordt **aangeroepen**.
 
-+ Add a new comment underneath the function to show that this section is where the main program starts. Make sure this comment is **not indented**.
-
-```python
-# Main program -------------
-```
-
-+ Add this line of code in the main program section to call the function:
++ Voeg een nieuwe opmerking toe onder de functie om aan te geven dat in dit gedeelte het hoofdprogramma begint. Zorg ervoor dat deze opmerking **niet ingesprongen** is.
 
 ```python
-draw_bat()
+# Hoofdprogramma -------------
 ```
 
-+ Run the code and check that three LEDs are now illuminated.
++ Voeg deze coderegel toe in het hoofdprogramma om de functie aan te roepen:
 
-![Three LEDs](images/three-leds.png)
+```python
+teken_batje()
+```
+
++ Voer de code uit en controleer of drie LED's nu branden.
+
+![Drie LED's](images/three-leds.png)
