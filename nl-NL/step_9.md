@@ -40,7 +40,7 @@ Om te controleren of een waarde tussen twee waarden ligt, kunnen we een voorwaar
 
 Deze voorwaarde controleert of `x` tussen `1` en `10` (inclusief) ligt door eerst te vragen of `1` kleiner is dan of gelijk is aan `x`, en vervolgens of `x` kleiner is dan of gelijk is aan `10`. Gebruik een vergelijkbare coderegel om te bepalen of de `y` coördinaat van je bal tussen `bat_y - 1` en `bat_y + 1` ligt.
 
---- / hint --- --- hint ---
+--- /hint --- --- hint ---
 
 Zo zou het voltooide programma eruit moeten zien. Het stukje dat je moet toevoegen, is blauw gemarkeerd:
 

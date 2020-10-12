@@ -57,7 +57,7 @@ if bal_positie[0] == 7 or bal_positie[0] == 0:
 
 --- collapse ---
 ---
-titel: Waarom werkt dit?
+title: Waarom werkt dit?
 ---
 
 De snelheid van de bal begint als `1`. Als de `x` positie van de bal gelijk is aan `7`, veranderen we de snelheid van `x` in `-1` om de bal om te keren. Vervolgens voegt de code `-1` toe aan de `x` positie van de bal om de bal naar links over de matrix te verplaatsen.
