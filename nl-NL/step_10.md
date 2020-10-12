@@ -1,25 +1,25 @@
-## You lose
+## Jij verliest
 
-If you miss the ball with the bat, at the moment it bounces off the far left wall. Let's change the code so that if the player misses the ball, they lose the game.
+Als je de bal met het batje mist, stuitert deze op de uiterst linkse muur. Laten we de code wijzigen zodat als de speler de bal mist, hij het spel verliest.
 
-+ Add another if statement at the end of your `draw_ball` function to check whether the ball's `x` position equals `0`, which would mean the ball has reached the far end of the screen.
++ Voeg nog een if-statement toe aan het einde van je `teken_bal` functie om te controleren of de positie van de bal `x` gelijk is aan `0`, wat betekent dat de bal het andere uiteinde van het scherm heeft bereikt.
 
-+ If this condition is true, display the message "You lose".
++ Als deze voorwaarde waar is, geeft je het bericht "Jij verliest" weer.
 
 --- hints --- --- hint ---
 
-Your new if statement will look very similar to the conditions you have already written. Add it here:
+Je nieuwe if-statement lijkt erg op de voorwaarden die je al hebt geschreven. Voeg het hier toe:
 
-![You lose](images/lose-hint-add-code.png)
+![Jij verliest](images/lose-hint-add-code.png)
 
 --- /hint ---
 
 --- hint ---
 
-Here is how your code should look. The part to add is highlighted in blue:
+Hier is hoe je code eruit zou moeten zien. Het toe te voegen deel is blauw gemarkeerd:
 
-![You lose](images/you-lose-hint-solution.png)
+![Jij verliest](images/you-lose-hint-solution.png)
 
---- /hint --- --- /hints ---
+--- / hint --- --- / hints ---
 
-+ Save and run your code. Check that, if you miss the ball, the message "You lose" appears. The game will restart after the message has been displayed.
++ Bewaar en voer je code uit. Controleer of het bericht "Jij verliest" verschijnt als je de bal mist. Het spel wordt opnieuw gestart nadat het bericht is weergegeven.
