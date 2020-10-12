@@ -1,50 +1,50 @@
-## Create a ball
+## Maak een bal
 
-The next step is to create the ball. But first, a little maths!
+De volgende stap is het maken van de bal. Maar eerst wat wiskunde!
 
-A ball moving in two dimensions has two essential properties you need to consider:
+Een bal die in twee dimensies beweegt, heeft twee essentiële eigenschappen waarmee je rekening moet houden:
 
-**Position** - like the bat, the ball has a vertical and horizontal coordinate on the grid.
+**Positie** - net als het batje heeft de bal een verticale en horizontale coördinaat op het rooster.
 
-**Velocity** - the speed of the ball in a straight line. This can also be described by two numbers: how fast it's moving in the `x` dimension, and how fast it's moving in the `y` dimension.
+**Snelheid** - de snelheid van de bal in een rechte lijn. Dit kan ook worden beschreven door twee getallen: hoe snel het beweegt in de `x` dimensie en hoe snel het beweegt in de `y` dimensie.
 
-+ Locate the `bat_y` variable in your program and, below it, add two lists to describe the ball's properties:
-
-``` python
-ball_position = [3, 3]
-ball_velocity = [1, 1]
-```
-
-+ Choose a colour for your ball and, below your `white` variable, define a variable with your chosen colour value. We have used  `(0, 0, 255)`, which is blue.
-
-+ In your functions section, create a function called `draw_ball`:
++ Zoek de variabele `bat_y` in je programma en voeg eronder twee lijsten toe om de eigenschappen van de bal te beschrijven:
 
 ``` python
-def draw_ball():
+bal_positie = [3, 3]
+bal_snelheid = [1, 1]
 ```
 
-+ Add a line of code to the `draw_ball` function to illuminate an LED at the `ball_position`.
++ Kies een kleur voor jouw bal en definieer onder jouw variabele `wit` een variabele met de door jouw gekozen kleurwaarde. We hebben `(0, 0, 255)` gebruikt, wat blauw is.
+
++ Maak in je functiegedeelte een functie met de naam `teken_bal`:
+
+``` python
+def teken_bal():
+```
+
++ Voeg een coderegel toe aan de functie `teken_bal` om een LED op de `bal_positie` te verlichten.
 
 [[[generic-python-list-index]]]
 
 --- hints --- --- hint ---
 
-The position on the `x` axis will be the zeroth item in the `ball_position` list. The `y` position will be the first item in the `ball_position` list.
+De positie op de `x` as is het nulde item in de lijst `bal_positie`. De positie `y` is het eerste item in de lijst `bal_positie`.
 
 --- /hint ---
 
 --- hint ---
 
-Here is how your code should look (assuming you also chose the colour blue for your ball):
+Dit is hoe je code eruit moet zien (ervan uitgaande dat je ook de kleur blauw voor je bal hebt gekozen):
 ``` python
-def draw_ball():
-    sense.set_pixel(ball_position[0], ball_position[1], blue)
+def teken_bal():
+    sense.set_pixel(bal_positie[0], bal_positie[1], blauw)
 ```
 
---- /hint --- --- /hints ---
+--- / hint --- --- / hints ---
 
-+ In your `while` loop, call the function `draw_ball`.
++ Roep in je `while` lus de functie `teken_bal` aan.
 
-+ Save and run your code, and check that the ball is displayed on the LED matrix.
++ Sla je code op en voer deze uit en controleer of de bal op de LED-matrix wordt weergegeven.
 
-![Draw the ball](images/draw-ball.png)
+![Teken de bal](images/draw-ball.png)
