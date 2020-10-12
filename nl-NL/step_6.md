@@ -1,77 +1,77 @@
-## Move the bat
+## Verplaats het batje
 
-Let's make the bat move up and down when the Sense HAT's joystick is moved.
+Laten we het batje op en neer laten bewegen wanneer de joystick van de Sense HAT wordt bewogen.
 
-+ In your functions section, define a new function called `move_up(event)`.
++ Definieer in jouw functiegedeelte een nieuwe functie met de naam `move_up(event)`.
 
-Some data called `event` will be passed to this function. The event data the function will receive is information about has happened to the Sense HAT joystick. This will include the time that the stick was used, the direction it was pushed in, and whether it was pressed, released, or held.
+Sommige gegevens met de naam `event` (gebeurtenis) worden aan deze functie doorgegeven. De gebeurtenisgegevens waarover de functie informatie ontvangt, zijn informatie over de Sense HAT-joystick. Dit omvat de tijd dat de stick werd gebruikt, de richting waarin deze werd geduwd en of deze werd ingedrukt, losgelaten of vastgehouden.
 
-+ Inside the `move_up` function, add an if statement to test if the `event.action` was `'pressed'` (in other words, whether the joystick was moved).
++ Voeg binnen de functie `move_up` een if-statement toe om te testen of de `event.action` `'pressed'` (ingedrukt) was (met andere woorden, of de joystick is verplaatst).
 
 ```python
 if event.action == 'pressed':
 ```
 
-If the condition is met, we want the bat to move upwards. Upwards in the coordinate system on our LED screen means making the y coordinate smaller - remember that the top pixel's y coordinate is `0`.
+Als aan de voorwaarde is voldaan, willen we dat het batje omhoog gaat. Naar boven in het coördinatensysteem op ons LED-scherm betekent het kleiner maken van de y-coördinaat - onthoud dat de y-coördinaat van de bovenste pixel `0` is.
 
-+ If the `event.action` was `'pressed'`, take away `1` from the `bat_y` coordinate. This will allow us to redraw the bat at a different position. **Note:** because the `bat_y` variable is defined outside of this function, we also have to tell Python to use the **global** version of this variable so that we are allowed to change it from inside the function.
++ Als `event.action` `'pressed'` is, verlaag dan met `1` de `bat_y` coördinaat. Hierdoor kunnen we het batje opnieuw tekenen op een andere positie. **Opmerking:** omdat de variabele `bat_y` buiten deze functie wordt gedefinieerd, moeten we Python ook vertellen om de **globale** versie van deze variabele te gebruiken, zodat we deze vanuit de functie mogen wijzigen.
 
-![Bat y moves up](images/move-bat-up.png)
+![Bat y gaat omhoog](images/move-bat-up.png)
 
-Remember that just like our `draw_bat` function, this function will do nothing until it is **called**.
+Onthoud dat, net als onze `teken_batje` functie, deze functie niets doet totdat deze wordt **aangeroepen**.
 
-+ In main program section, add this line of code above the `draw_bat` function call. This line says "When the Sense HAT stick is pushed up, call the function `move_up`."
++ Voeg in het hoofdgedeelte van het programma deze coderegel toe boven de functie aanroep `teken_batje`. Deze regel zegt: "Wanneer de Sense HAT-stick omhoog wordt geduwd, roep je de functie `move_up` aan."
 
 ``` python
 sense.stick.direction_up = move_up
 ```
 
-If you run your code at this point, nothing will happen. This is because, at the moment, we are only checking for joystick movement once when the function is run. To make this function useful for our game, we need to continually check whether the joystick was moved.
+Als je jouw code op dit punt uitvoert, gebeurt er niets. Dit komt omdat we op dit moment slechts één keer controleren of de joystick beweegt wanneer de functie wordt uitgevoerd. Om deze functie nuttig te maken voor ons spel, moeten we voortdurend controleren of de joystick is verplaatst.
 
-+ In your main program section, put the function call to `draw_bat` inside an infinite loop.
++ Zet in je hoofdprogramma-gedeelte de functie aanroep van `teken_batje` in een oneindige lus.
 
 [[[generic-python-while-true]]]
 
-If you have used Scratch before, this should be familiar, as it is the same as using a forever loop.
+Als je eerder Scratch hebt gebruikt, zou dit bekend moeten zijn, omdat dit hetzelfde is als het gebruik van een herhaal-lus.
 
-![Forever loop in Scratch](images/forever-scratch.png)
+![Herhaal-lus in Scratch](images/forever-scratch.png)
 
-+ Save and run your code. Press the joystick on the Sense HAT up (or use the arrow keys on your keyboard if you are using the emulator).
++ Bewaar en voer je code uit. Druk de joystick op de Sense HAT omhoog (of gebruik de pijltjestoetsen op je toetsenbord als je de emulator gebruikt).
 
-![Move the bat](images/move-the-bat.gif)
+![Verplaats het batje](images/move-the-bat.gif)
 
-Oh dear — the result looks a bit like you are smudging the bat upwards on the screen rather than moving it! We need to clear the screen and wait a while before each time we draw the bat in the infinite loop.
+Oeps — het resultaat lijkt een beetje alsof je het batje op het scherm omhoog veegt in plaats van hem te verplaatsen! We moeten het scherm leegmaken en een tijdje wachten voordat we elke keer het batje in de oneindige lus tekenen.
 
 
-+ Add this line to your infinite loop to clear the LED matrix each time before the bat is drawn.
++ Voeg deze regel toe aan je oneindige lus om de LED-matrix elke keer te wissen voordat het batje wordt getekend.
 
 ``` python
 sense.clear(0, 0, 0)
 ```
 
-+ To make the program wait a little while, add a line inside the loop after `draw_bat` to `sleep` for 0.25 seconds.
++ Om het programma een tijdje te laten wachten, voeg je een regel in de lus toe na `teken_batje` om gedurende 0,25 seconden te slapen met de instructie `sleep`.
 
 [[[generic-python-sleep]]]
 
-+ Save and run your code again. Try moving the bat and check whether it now moves up as expected.
++ Sla op en voer je code opnieuw uit. Probeer het batje te verplaatsen en controleer of deze nu omhoog gaat zoals verwacht.
 
-If you move the bat too far upwards, your program tries to draw it outside the LED screen, and then the program crashes. You need to make sure that the value of the `bat_y` variable is never less than `1`, so that the bat remains on the grid at all times.
+Als je het batje te ver naar boven beweegt, probeert je programma deze buiten het LED-scherm te tekenen en crasht het programma. Je moet ervoor zorgen dat de waarde van de variabele `bat_y` nooit minder is dan `1`, zodat het batje altijd op het rooster blijft.
 
-+ Add code to your `move_up` function to make sure the `bat_y` variable's value can never become smaller than `1`.
++ Voeg code toe aan je `move_up` functie om ervoor te zorgen dat de waarde van de variabele `bat_y` nooit kleiner kan worden dan `1`.
 
-![Check bat isn't off the screen](images/check-not-off-screen.png)
+![Controleer batje is niet van het scherm](images/check-not-off-screen.png)
 
-+ Now follow these steps again, making a few changes to allow you to to move your bat **downwards** on the LED matrix as well as upwards.
++ Volg nu deze stappen opnieuw en breng een paar wijzigingen aan zodat je jouw batje zowel **naar beneden** op de LED-matrix kunt verplaatsen als naar boven.
 
 --- hints --- --- hint ---
 
-Begin by writing a `move_down(event)` function containing instructions for when the bat should be moved downwards. This time, you should add `1` to `bat_y`, but only if the value of `bat_y` is less than `6`, so that the bat remains on the screen.
+Begin met het schrijven van een `move_down(event)` functie met instructies voor wanneer het batje naar beneden moet worden verplaatst. Deze keer moet je `1` bij `bat_y` optellen, maar alleen als de waarde van `bat_y` kleiner is dan `6`, zodat het batje op het scherm blijft.
 
 --- /hint ---
 
 --- hint ---
 
-You will need to use another line of code in your main program section to call the `move_down` function when the joystick is moved down.
+Je moet een andere coderegel in je hoofdprogrammasectie gebruiken om de functie `move_down` te activeren wanneer de joystick naar beneden wordt verplaatst.
 
 ``` python
 sense.stick.direction_down = move_down
@@ -81,9 +81,9 @@ sense.stick.direction_down = move_down
 
 --- hint ---
 
-Here is how your code should look:
+Dit is hoe je code eruit zou moeten zien:
 
-![Moving the bat down](images/hint-move-down.png)
+![Het batje naar beneden verplaatsen](images/hint-move-down.png)
 
 --- /hint ---
 
