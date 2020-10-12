@@ -1,52 +1,52 @@
-## Collision with the bat
+## Botsing met het batje
 
-Now that the ball bounces in both directions, let's make it bounce off the bat.
+Nu de bal in beide richtingen stuitert, gaan we hem van het batje laten stuiteren.
 
-The bat is always situated in the far left column of the LED grid, so its `x` coordinate is always `0`.
+Het batje bevindt zich altijd in de meest linkse kolom van het LED-raster, dus de `x` coördinaat is altijd `0`.
 
-The ball will bounce off the bat if it is in the row next to the bat — that is, if the ball's `x` position is equal to `1`.
+De bal stuitert van het batje als deze in de rij naast het batje staat — dat wil zeggen, als de `x` positie van de bal gelijk is aan `1`.
 
-![Ball bounce x](images/ball-bounce-x.png)
+![Bal stuiteren x](images/ball-bounce-x.png)
 
-+ Add this code to the end of the `draw_ball` function:
++ Voeg deze code toe aan het einde van de `teken_bal` functie:
 
 ``` python
-if ball_position[0] == 1:
-    ball_velocity[0] = -ball_velocity[0]
+if bal_positie[0] == 1:
+    bal_snelheid[0] = -bal_snelheid[0]
 ```
 
-This code will cause the ball to reverse direction if it reaches an `x` coordinate of `1`. But now the ball reverses regardless of whether the bat is there or not!
+Deze code zorgt ervoor dat de bal van richting verandert als hij een `x` coördinaat van `1` heeft. Maar nu keert de bal om, ongeacht of het batje er is of niet!
 
-- Add to the condition to require the ball's `y` position to also (**and**) be anywhere between the top and bottom of the bat.
+- Voeg aan de voorwaarde toe dat de `y` positie van de bal ook (**en**) ergens tussen de boven- en onderkant van het batje moet zijn.
 
-Remember that the bat is made up of three pixels. So for the ball to 'bounce off' the bat, the `y` coordinate of the ball can be anywhere **between** the top of the bat (`bat_y - 1`) and the bottom of the bat (`bat_y + 1`).
+Vergeet niet dat het batje uit drie pixels bestaat. Dus om de bal van het batje te laten 'stuiteren', kan de `y` coördinaat van de bal ergens **tussen** de bovenkant van het batje (`bat_y - 1`) en de onderkant van het batje (`bat_y + 1`) liggen.
 
 --- hints --- --- hint ---
 
-Add your extra condition at the location highlighted blue:
+Voeg je extra conditie toe op de blauw gemarkeerde locatie:
 
-![Has it hit the bat?](images/hint-add-hit-bat.png)
+![Is het batje geraakt?](images/hint-add-hit-bat.png)
 
 --- /hint ---
 
 --- hint ---
 
-To check whether a value is between two values, we can write a condition like this:
+Om te controleren of een waarde tussen twee waarden ligt, kunnen we een voorwaarde als volgt schrijven:
 
 ```python
 1 <= x <= 10
 ```
 
-This condition checks whether `x` is between `1` and `10` (inclusive) by asking first whether `1` is less than or equal to `x`, and then whether `x` is less than or equal to `10`. Use a similar line of code to determine whether your ball's `y` coordinate is between `bat_y - 1` and `bat_y + 1`.
+Deze voorwaarde controleert of `x` tussen `1` en `10` (inclusief) ligt door eerst te vragen of `1` kleiner is dan of gelijk is aan `x`, en vervolgens of `x` kleiner is dan of gelijk is aan `10`. Gebruik een vergelijkbare coderegel om te bepalen of de `y` coördinaat van je bal tussen `bat_y - 1` en `bat_y + 1` ligt.
 
---- /hint --- --- hint ---
+--- / hint --- --- hint ---
 
-Here is how your finished code should look. The bit you should add is highlighted in blue:
+Zo zou het voltooide programma eruit moeten zien. Het stukje dat je moet toevoegen, is blauw gemarkeerd:
 
-![Has it hit the bat?](images/hint-add-hit-bat-solution.png)
+![Is het batje geraakt?](images/hint-add-hit-bat-solution.png)
 
 --- /hint ---
 
 --- /hints ---
 
-+ Save and run your code. Check that the ball bounces off the bat only when the bat is in the correct position!
++ Bewaar en voer je code uit. Controleer of de bal alleen van het batje stuitert wanneer het batje op de juiste positie staat!
