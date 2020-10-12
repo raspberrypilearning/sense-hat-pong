@@ -1,10 +1,10 @@
-## Challenge: add more features
+## Uitdaging: voeg meer functies toe
 
-+ Add a score which increases each time the ball bounces off the bat. Report the score to the player when they lose.
++ Voeg een score toe die toeneemt telkens wanneer de bal van het batje stuitert. Meld de score aan de speler wanneer hij verliest.
 
-+ Make the game easier or harder by changing the length of the `sleep` period in the while loop.
++ Maak het spel eenvoudiger of moeilijker door de lengte van de `sleep` periode in de while-lus te wijzigen.
 
-+ Give the player three lives: each time they miss the ball, they lose a life and the ball resets. Once all lives are lost, the game ends.
++ Geef de speler drie levens: elke keer dat ze de bal missen, verliezen ze een leven en wordt de bal gereset. Zodra alle levens verloren zijn, eindigt het spel.
 
 ### Hour of Code
-[I've finished my Hour of Code!](https://code.org/api/hour/finish)
+[Ik ben klaar met mijn Hour of Code!](https://code.org/api/hour/finish)
