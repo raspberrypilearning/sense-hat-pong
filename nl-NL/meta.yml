@@ -17,14 +17,18 @@ software: python
 version: 4
 last_tested: 2017/01/01
 steps:
-  - title: Inleiding
-  - title: Wat heb je nodig
-  - title: Maak verbinding met de Sense HAT
-  - title: Verlicht een LED
-  - title: Maak een batje
-  - title: Verplaats het batje
-  - title: Maak een bal
-  - title: Verplaats de bal
-  - title: Botsing met het batje
-  - title: Jij verliest
-  - title: "Uitdaging: voeg meer functies toe"
+- title: Inleiding
+- title: Wat heb je nodig
+- title: Maak verbinding met de Sense HAT
+- title: Verlicht een LED
+  completion:
+  - engaged
+- title: Maak een batje
+- title: Verplaats het batje
+- title: Maak een bal
+- title: Verplaats de bal
+- title: Botsing met het batje
+- title: Jij verliest
+  completion:
+  - internal
+- title: 'Uitdaging: voeg meer functies toe'
