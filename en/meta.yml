@@ -19,14 +19,16 @@ last_tested: 2017-01-01
 steps:
 - title: Introduction
 - title: What you will need
-  completion: engaged
 - title: Connect to the Sense HAT
 - title: Light up an LED
+  completion:
+  - engaged
 - title: Make a bat
 - title: Move the bat
 - title: Create a ball
 - title: Move the ball
 - title: Collision with the bat
 - title: You lose
-  completion: internal
+  completion:
+  - internal
 - title: 'Challenge: add more features'

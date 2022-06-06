@@ -20,14 +20,16 @@ last_tested: 2017-01-01
 steps:
 - title: परिचय
 - title: आपको किसकी ज़रूरत होगी
-  completion: engaged
 - title: Sense HAT से कनेक्ट करें
 - title: LED को जलाना
+  completion:
+  - engaged
 - title: एक बल्ला बनाए
 - title: बल्ला घुमाएं
 - title: एक गेंद बनाएँ
 - title: गेंद को हिलाएं
 - title: बल्ले से टकराव
 - title: तुम हारे
-  completion: internal
+  completion:
+  - internal
 - title: 'चुनौती: अधिक विशेषताएं जोड़ें'
