@@ -25,6 +25,8 @@ steps:
     title: Connect to the Sense HAT
   - 
     title: Light up an LED
+    completion:
+      - engaged
   - 
     title: Make a bat
   - 
@@ -37,5 +39,7 @@ steps:
     title: Collision with the bat
   - 
     title: You lose
+    completion:
+      - internal
   - 
-    title: "Challenge: add more features"
+    title: 'Challenge: add more features'
