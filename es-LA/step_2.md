@@ -1,4 +1,4 @@
-## What you will need
+## Qué necesitarás
 
 ### Hardware
 
@@ -6,7 +6,7 @@
 * Sense HAT (If you do not have a Sense HAT, you could create the project in a web browser using the [Sense HAT emulator](https://trinket.io/sense-hat), or use the emulator software on you Pi.)
 
 ### Software
-You will need the [latest version of Raspbian](https://www.raspberrypi.org/downloads/), which already includes the following software packages:
+Necesitarás [la última versión de Raspbian](https://www.raspberrypi.org/downloads/) que incluye los siguientes paquetes de software:
 
 - Python 3
 - Sense HAT for Python 3
