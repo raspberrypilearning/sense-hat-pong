@@ -1,12 +1,12 @@
-## Light up an LED
+## Enciende un LED
 
-Games often use the coordinates `x` and `y` to determine where an object is on the display. `x` is used to set the horizontal position of an object, and `y` is used to set the vertical position of an object.
+Por lo general, los juegos usan las coordenadas `x` y `y` para determinar dónde se ubica un objeto en el monitor. `x` se utiliza para posicionar un objeto de forma horizontal, y `y` para posicionar un objeto de forma vertical.
 
-We can do the same with the LEDs on the Sense HAT.
+Lo mismo podemos hacer con los LEDs en la Sense HAT.
 
 [[[rpi-sensehat-led-coordinates]]]
 
-Let's start our Pong game by lighting up a single LED to create a ball, and then adding a few more to create a bat.
+Comencemos el juego encendiendo un LED para crear una pelota y agregar algunas más para crear un bate.
 
 + Open IDLE if you are using a physical Sense HAT, or open a new trinket if you are using the [emulator](http://trinket.io/sense-hat).
 
@@ -19,15 +19,15 @@ from sense_hat import SenseHat
 sense = SenseHat()
 ```
 
-+ The bat will be white. Define a variable called `white`, and set its value to `(255, 255, 255)`, which is the RGB colour representation of white.
++ El bate será blanco. Define a variable called `white`, and set its value to `(255, 255, 255)`, which is the RGB colour representation of white.
 
 [[[rpi-sensehat-display-colour]]]
 
 [[[generic-theory-colours]]]
 
-The bat will always be on the far left-hand column of pixels, so its `x` value will always be `0`, but its `y` value will change as you move the bat up and down.
+El bate siempre estará a la izquierda de los píxeles, así que el valor de `x` siempre será `0`, pero su valor `y` cambiará al mover el bate hacia arriba y hacia abajo.
 
-+ Create another variable `bat_y` and set its value to `4`.
++ Crea otra variable `bate_y` y asígnale el valor `4`.
 
 + Set the LED at the position `(0, bat_y)` to `white` using the `set_pixel` method.
 
@@ -37,17 +37,17 @@ The bat will always be on the far left-hand column of pixels, so its `x` value w
 
 --- hint ---
 
-First, create a variable with the name `white` and set it equal to `(255, 255, 255)` like this:
+Primero, crea una variable con el nombre `blanco` y ajústala para que sea igual a `(255, 255, 255)` de esta manera:
 
 ```python
-white = (255, 255, 255)
+blanco = (255, 255, 255)
 ```
 
 --- /hint ---
 
 --- hint ---
 
-On the next line, create another variable just like you did for the colour `white`, except this time the name will be `bat_y` and the value will be `4`.
+En la siguiente línea, crea otra variable como hiciste para el color `blanco`, excepto que esta vez, el nombre será `bate_y` y el valor será `4`.
 
 --- /hint ---
 
@@ -59,17 +59,17 @@ Your finished code should look like this:
 from sense_hat import SenseHat
 sense = SenseHat()
 
-white = (255, 255, 255)
+blanco= (255, 255, 255)
 
-bat_y = 4
+bate_y = 4
 
-sense.set_pixel(0, bat_y, white)
+sense.set_pixel(0, bate_y, blanco)
 ```
 
 --- /hint---
 
 --- /hints ---
 
-+ Save and run your code. A single LED should now be illuminated in white on the left side of the LED matrix.
++ Guarda y ejecuta tu código. Ahora debería encenderse un solo LED en blanco en el lado izquierdo de la matriz de LED.
 
-![Single LED lit](images/single-led.png)
+![Un solo LED encendido](images/single-led.png)
