@@ -1,4 +1,4 @@
-## Connect to the Sense HAT
+## Conéctate a la Sense HAT
 
 + If you have a Sense HAT, attach it to your Raspberry Pi.
 
