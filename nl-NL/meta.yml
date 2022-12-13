@@ -25,6 +25,8 @@ steps:
     title: Maak verbinding met de Sense HAT
   - 
     title: Verlicht een LED
+    completion:
+      - engaged
   - 
     title: Maak een batje
   - 
@@ -37,5 +39,7 @@ steps:
     title: Botsing met het batje
   - 
     title: Jij verliest
+    completion:
+      - internal
   - 
-    title: "Uitdaging: voeg meer functies toe"
+    title: 'Uitdaging: voeg meer functies toe'
