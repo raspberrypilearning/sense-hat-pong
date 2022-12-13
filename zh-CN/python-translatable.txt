@@ -1,0 +1,11 @@
+white
+
+bat_y
+
+draw_bat
+
+ball_position
+
+ball_velocity
+
+draw_ball
