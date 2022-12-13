@@ -25,6 +25,8 @@ steps:
     title: Sense HAT से कनेक्ट करें
   - 
     title: LED को जलाना
+    completion:
+      - engaged
   - 
     title: एक बल्ला बनाए
   - 
@@ -37,5 +39,7 @@ steps:
     title: बल्ले से टकराव
   - 
     title: तुम हारे
+    completion:
+      - internal
   - 
-    title: "चुनौती: अधिक विशेषताएं जोड़ें"
+    title: 'चुनौती: अधिक विशेषताएं जोड़ें'
