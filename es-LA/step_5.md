@@ -1,71 +1,71 @@
-## Make a bat
+## Haz un bate
 
-Let's draw the rest of the bat by illuminating the LEDs immediately above and below the one that's currently illuminated. To do this, we will make a **function**.
+Dibujemos el resto del bate encendiendo los LEDs inmediatamente por encima y por debajo del que actualmente está encendido. Para hacer esto, haremos una **función**.
 
 [[[generic-python-simple-functions]]]
 
-+ **Indent** the line `sense.set_pixel(0, bat_y, white)` by putting your cursor at the start of the line and pressing the **tab** key.
++ **Indenta** la línea `sense.set_pixel(0, bate_y, blanco)` colocando el cursor al principio de la línea y presionando la tecla **tab**.
 
-+ On the line immediately above this line, start a function called `draw_bat`:
++ En la línea inmediatamente arriba de esta línea, inicia una función llamada `dibujar_bate`:
 
-![Indented part of function](images/indented-in-function.png)
+![Parte indentada de la función con sangría](images/indented-in-function.png)
 
-The lines following the start of a function are indented to show that they are **inside** the function.
+Las líneas después del inicio de una función están indentadas para mostrar que están **dentro** de la función.
 
-You could add a **comment** just above the start of your function to show that this section will contain your functions — we will be writing some more later on.
+Podrías añadir un **comentario** justo encima de tu función para mostrar que esta sección contendrá tus funciones — escribiremos algo más, más adelante.
 
 ```python
-# Functions ----------------
+# Funciones ----------------
 ```
 
-+ Add two more lines of code inside the function to illuminate the LEDs at positions `bat_y + 1`, and `bat_y - 1` as well.
++ Agrega dos líneas más de código dentro de la función para encender los LEDs en las posiciones `bate_y + 1`, y también `bate_y - 1`.
 
 --- hints --- --- hint ---
 
-The lines you need are very similar to the one you already have. What do you need to change in this line to make `bat_y + 1` lit instead of `bat_y`?
+Las líneas que necesitas son muy similares a las que ya tienes. ¿Qué necesitas cambiar en esta línea para que se encienda `bate_y + 1` en lugar de `bate_y`?
 
 ```python
-sense.set_pixel(0, bat_y, white)
+sense.set_pixel(0, bate_y, blanco)
 ```
 
 --- /hint ---
 
 --- hint ---
 
-Don't forget to indent your new lines of code as well so that they are inside the function.
+No olvides de indentar tus nuevas líneas de código para que estén dentro de la función.
 
 --- /hint ---
 
 --- hint ---
 
-Here is how your function should look:
+Así es como debería verse tu función:
 
 ```python
-# Functions ----------------
-def draw_bat():
-    sense.set_pixel(0, bat_y, white)
-    sense.set_pixel(0, bat_y + 1, white)
-    sense.set_pixel(0, bat_y - 1, white)
+# Funciones ----------------
+def dibujar_bate():
+    sense.set_pixel(0, bate_y, blanco)
+    sense.set_pixel(0, bate_y + 1, blanco)
+    sense.set_pixel(0, bate_y - 1, blanco)
 ```
 
 --- /hint ---
 
 --- /hints ---
 
-If you run your code now, nothing will happen. The code you just wrote inside the function will not do anything at all until the function is **called**.
+Si ejecutas tu código en este momento, no pasará nada. El código que acabas de escribir dentro de la función no hará nada hasta que la función sea **llamada**.
 
-+ Add a new comment underneath the function to show that this section is where the main program starts. Make sure this comment is **not indented**.
-
-```python
-# Main program -------------
-```
-
-+ Add this line of code in the main program section to call the function:
++ Agrega un nuevo comentario debajo de la función para mostrar que esta sección es donde comienza el programa principal. Asegúrate de que este comentario sea **no indentado**.
 
 ```python
-draw_bat()
+# Programa principal -------------
 ```
 
-+ Run the code and check that three LEDs are now illuminated.
++ Agrega esta línea de código en la sección Programa principal para llamar a la función:
 
-![Three LEDs](images/three-leds.png)
+```python
+dibujar_bate()
+```
+
++ Ejecuta el código y comprueba que tres LEDs estén encendidos ahora.
+
+![Tres LED](images/three-leds.png)
