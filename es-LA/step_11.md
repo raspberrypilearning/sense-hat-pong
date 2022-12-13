@@ -1,10 +1,10 @@
-## Challenge: add more features
+## Desafío: agrega más características
 
-+ Add a score which increases each time the ball bounces off the bat. Report the score to the player when they lose.
++ Agrega una puntuación que aumenta cada vez que la pelota rebota en el bate. Reporta la puntuación al jugador cuando pierde.
 
 + Make the game easier or harder by changing the length of the `sleep` period in the while loop.
 
-+ Give the player three lives: each time they miss the ball, they lose a life and the ball resets. Once all lives are lost, the game ends.
++ Dale tres vidas al jugador: cada vez que fallan en darle a la pelota, pierden una vida y la pelota regresa al inicio. Una vez que se pierden todas las vidas, el juego termina.
 
-### Hour of Code
+### Hora del código
 [I've finished my Hour of Code!](https://code.org/api/hour/finish)
