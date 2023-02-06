@@ -1,20 +1,20 @@
 ## Introduction
 
-In this activity you will create a Pong game using your Raspberry Pi, a Sense HAT, and some Python code. Pong is one of the oldest graphical games ever created, and was originally played on an oscilloscope! <iframe width="560" height="315" src="https://www.youtube.com/embed/bzEBOjvA11w" frameborder="0" allowfullscreen></iframe>
+Dans cette activité, tu vas créer un jeu Pong en utilisant ton Raspberry Pi, un Sense HAT, et du code Python. Pong est l'un des plus anciens jeux graphiques jamais créés et se jouait à l'origine sur un oscilloscope ! <iframe width="560" height="315" src="https://www.youtube.com/embed/bzEBOjvA11w" frameborder="0" allowfullscreen></iframe>
 
-### What you will make
+### Ce que tu feras
 
-Open the trinket below to try out the game. Use your keyboard's arrow keys to control the paddle. Don't let the ball touch the edge or you will lose the game! <iframe src="https://trinket.io/embed/python/546e658d41?outputOnly=true&runOption=run&start=result" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+Ouvre le trinket ci-dessous pour essayer le jeu. Utilise les touches fléchées de ton clavier pour contrôler la raquette. Ne laisse pas la balle toucher le bord ou tu perdras la partie! <iframe src="https://trinket.io/embed/python/546e658d41?outputOnly=true&runOption=run&start=result" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
-### What you will learn
-By coding a Pong game with your Raspberry Pi and Sense HAT, you will learn how to:
+### Ce que tu vas apprendre
+En codant un jeu de Pong avec ton Raspberry Pi et Sense HAT, tu apprendras à :
 
-- Illuminate Sense HAT pixels
-- Detect movements of the Sense HAT joystick
+- Illuminer les pixels du Sense HAT
+- Détecter les mouvements du joystick du Sense HAT
 
-This resource covers elements from the following strands of the [Raspberry Pi Digital Making Curriculum](https://www.raspberrypi.org/curriculum/):
+Ce projet couvre les éléments suivants du [Programme de Créativité Numérique de Raspberry Pi](https://www.raspberrypi.org/curriculum/) :
 
-- [Apply programming constructs to solve a problem](https://www.raspberrypi.org/curriculum/programming/builder)
-- [Combine inputs and/or outputs to create projects or solve a problem](https://www.raspberrypi.org/curriculum/physical-computing/builder)
+- [Appliquer des concepts de programmation pour résoudre un problème](https://www.raspberrypi.org/curriculum/programming/builder)
+- [Combiner des entrées et/ou des sorties pour créer des projets ou résoudre un problème](https://www.raspberrypi.org/curriculum/physical-computing/builder)
 
-![Hour of Code pixel](http://code.org/api/hour/begin_raspberrypi_pong.png)
+![Heure de Code pixel](http://code.org/api/hour/begin_raspberrypi_pong.png)
