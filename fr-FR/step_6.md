@@ -1,89 +1,89 @@
-## Move the bat
+## Déplacer la raquette
 
-Let's make the bat move up and down when the Sense HAT's joystick is moved.
+Faisons bouger la raquette de haut en bas lorsque le joystick du Sense HAT est déplacé.
 
-+ In your functions section, define a new function called `move_up(event)`.
++ Dans la section des fonctions, définis une nouvelle fonction appelée `deplace_haut(event)`.
 
-Some data called `event` will be passed to this function. The event data the function will receive is information about has happened to the Sense HAT joystick. This will include the time that the stick was used, the direction it was pushed in, and whether it was pressed, released, or held.
+Certaines données appelées `event` seront transmises à cette fonction. Les données d'événement que la fonction recevra sont les informations du joystick Sense HAT. Cela inclura le temps pendant lequel le joystick a été utilisé, la direction dans laquelle il a été actionné et s'il a été enfoncé, relâché ou tenu.
 
-+ Inside the `move_up` function, add an if statement to test if the `event.action` was `'pressed'` (in other words, whether the joystick was moved).
++ À l'intérieur de la fonction `deplace_haut` , ajoute une instruction if pour tester si `event.action` était `'pressed'` (autrement dit, si le joystick a été déplacé).
 
 ```python
 if event.action == 'pressed':
 ```
 
-If the condition is met, we want the bat to move upwards. Upwards in the coordinate system on our LED screen means making the y coordinate smaller - remember that the top pixel's y coordinate is `0`.
+Si la condition est remplie, nous voulons que la raquette se déplace vers le haut. En haut dans le système de coordonnées de notre écran LED, la coordonnée y est plus petite. Rappelle-toi que la coordonnée y du haut est `0`.
 
-+ If the `event.action` was `'pressed'`, take away `1` from the `bat_y` coordinate. This will allow us to redraw the bat at a different position. **Note:** because the `bat_y` variable is defined outside of this function, we also have to tell Python to use the **global** version of this variable so that we are allowed to change it from inside the function.
++ Si l'événement `event.action` était `'pressed'`, retire `1` de la coordonnée `raquette_y`. Cela nous permettra de redessiner la raquette à une position différente. **Remarque :** du fait que la variable `raquette_y` est définie en dehors de cette fonction, nous devons également indiquer à Python d'utiliser la version **globale** de cette variable afin que nous soyons autorisés à la modifier depuis l'intérieur de la fonction.
 
-![Bat y moves up](images/move-bat-up.png)
+![Raquette y se déplace vers le haut](images/move-bat-up.png)
 
-Remember that just like our `draw_bat` function, this function will do nothing until it is **called**.
+Rappelle-toi que, tout comme la fonction `dessine_raquette`, cette fonction ne fera rien tant qu'elle n'est pas **appelée**.
 
-+ In main program section, add this line of code above the `draw_bat` function call. This line says "When the Sense HAT stick is pushed up, call the function `move_up`."
++ Dans la section principale du programme, ajoute cette ligne de code au-dessus de l'appel de fonction `dessine_raquette`. Cette ligne indique "Lorsque le stick Sense HAT est actionné vers le haut, appeler la fonction `deplace_haut`."
 
 ``` python
-sense.stick.direction_up = move_up
+sense.stick.direction_up = deplace_haut
 ```
 
-If you run your code at this point, nothing will happen. This is because, at the moment, we are only checking for joystick movement once when the function is run. To make this function useful for our game, we need to continually check whether the joystick was moved.
+Si tu exécutes ton programme à ce stade, rien ne se passera. En effet, pour le moment, nous ne vérifions le mouvement du joystick qu'une seule fois lorsque la fonction est exécutée. Pour rendre cette fonction utile pour notre jeu, nous devons vérifier continuellement si le joystick a été déplacé.
 
-+ In your main program section, put the function call to `draw_bat` inside an infinite loop.
++ Dans la section du programme principal, place l'appel de la fonction `dessine_raquette` dans une boucle infinie.
 
 [[[generic-python-while-true]]]
 
-If you have used Scratch before, this should be familiar, as it is the same as using a forever loop.
+Si tu as déjà utilisé Scratch auparavant, cela devrait te dire quelque chose, car cela revient à utiliser une boucle 'répéter indéfiniment'.
 
-![Forever loop in Scratch](images/forever-scratch.png)
+![Boucle infinie dans Scratch](images/forever-scratch.png)
 
-+ Save and run your code. Press the joystick on the Sense HAT up (or use the arrow keys on your keyboard if you are using the emulator).
++ Enregistre et exécute ton code. Actionne le joystick du Sense HAT vers le haut (ou utilise les touches fléchées de ton clavier si tu utilises l'émulateur).
 
-![Move the bat](images/move-the-bat.gif)
+![Déplace la raquette](images/move-the-bat.gif)
 
-Oh dear — the result looks a bit like you are smudging the bat upwards on the screen rather than moving it! We need to clear the screen and wait a while before each time we draw the bat in the infinite loop.
+Oh! - le résultat donne l'impression que tu étires la raquette vers le haut de l'écran plutôt que de la déplacer! Nous devons effacer l'écran et attendre un moment avant de dessiner la raquette à chaque itération dans la boucle infinie.
 
 
-+ Add this line to your infinite loop to clear the LED matrix each time before the bat is drawn.
++ Ajoute cette ligne à ta boucle infinie pour effacer la matrice LED à chaque fois avant que la raquette ne soit dessinée.
 
 ``` python
 sense.clear(0, 0, 0)
 ```
 
-+ To make the program wait a little while, add a line inside the loop after `draw_bat` to `sleep` for 0.25 seconds.
++ Pour suspendre un peu le programme, ajoute une ligne à l'intérieur de la boucle après `dessine_raquette` pour `sleep` (dormir) pendant 0,25 secondes.
 
 [[[generic-python-sleep]]]
 
-+ Save and run your code again. Try moving the bat and check whether it now moves up as expected.
++ Enregistre et exécute ton code à nouveau. Essaye de déplacer la raquette et vérifie si elle se déplace maintenant comme prévu.
 
-If you move the bat too far upwards, your program tries to draw it outside the LED screen, and then the program crashes. You need to make sure that the value of the `bat_y` variable is never less than `1`, so that the bat remains on the grid at all times.
+Si tu déplaces la raquette trop vers le haut, ton programme essaie de la faire sortir de l'écran LED, puis le programme se bloque. Tu dois t'assurer que la valeur de la variable `raquette_y` n'est jamais inférieure à `1`, afin que la raquette reste sur la grille à tout moment.
 
-+ Add code to your `move_up` function to make sure the `bat_y` variable's value can never become smaller than `1`.
++ Ajoute du code à ta fonction `deplace_haut` pour t'assurer que la valeur de la variable `raquette_y` ne peut jamais devenir inférieure à `1`.
 
-![Check bat isn't off the screen](images/check-not-off-screen.png)
+![Vérifie que la raquette n'est pas hors de l'écran](images/check-not-off-screen.png)
 
-+ Now follow these steps again, making a few changes to allow you to to move your bat **downwards** on the LED matrix as well as upwards.
++ Maintenant, suis à nouveau ces étapes, en apportant quelques modifications pour te permettre de déplacer la raquette **vers le bas** sur la matrice LED ainsi que vers le haut.
 
 --- hints --- --- hint ---
 
-Begin by writing a `move_down(event)` function containing instructions for when the bat should be moved downwards. This time, you should add `1` to `bat_y`, but only if the value of `bat_y` is less than `6`, so that the bat remains on the screen.
+Commence par écrire une fonction `deplace_bas(event)` contenant des instructions pour que la raquette puisse être déplacée vers le bas. Cette fois, tu dois ajouter `1` à `raquette_y`, mais seulement si la valeur de `raquette_y` est inférieure à `6`, afin que la raquette reste à l'écran.
 
 --- /hint ---
 
 --- hint ---
 
-You will need to use another line of code in your main program section to call the `move_down` function when the joystick is moved down.
+Tu dois utiliser une autre ligne de code dans la section principale du programme pour appeler la fonction `deplace_bas` lorsque le joystick est déplacé vers le bas.
 
 ``` python
-sense.stick.direction_down = move_down
+sense.stick.direction_down = deplace_bas
 ```
 
 --- /hint ---
 
 --- hint ---
 
-Here is how your code should look:
+--- /hint --- --- /hints ---
 
-![Moving the bat down](images/hint-move-down.png)
+![Déplace la raquette vers le bas](images/hint-move-down.png)
 
 --- /hint ---
 
