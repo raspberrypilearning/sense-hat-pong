@@ -8,112 +8,112 @@ sense = SenseHat()
 
 sense.clear(0,0,0)
 mine = (80,0,0)
-clear = (40,40,40)
-marked = (255,0,0)
-free = (255,255,255)
-touching = (0,0,255)
+vide = (40,40,40,40)
+marque = (255,0,0)
+libre = (255,255,255)
+touche = (0,0,255)
 x = 0
 y = 0
-ratios = [mine,clear,clear,clear]
+ratios = [mine,vide,vide,vide,vide]
 
-original_board=[]
+tableau_original=[]
 for i in range(8):
-    original_board.append([choice(ratios) for i in range(8)]) 
+    tableau_original.append([choice(ratios) for i in range(8)]) 
 
-player_board = deepcopy(original_board)
+tableau_jeu = deepcopy(tableau_original)
 
-screen = curses.initscr()
-screen.keypad(True)
+ecran = curses.initscr()
+ecran.keypad(True)
 curses.cbreak()
 #curses.noecho()
 
-def flattened():
-    flat = [i for j in player_board for i in j]
-    return flat
+def aplati() :
+    plat = [i for j in tableau_jeu for i in j]
+    return plat
 
-def check_position(x,y):
-    global game_over
-    if player_board[y][x] == marked:
-        if original_board[y][x] == mine:
-            screen.addstr(12,12,'That was a mine')
-            game_over = True
-        if original_board[y][x] == clear:
-            player_board[y][x] = clear
-            find_clear(x,y)
-    elif player_board[y][x] == free:
+def test_position(x,y):
+    global jeu_termine
+    if tableau_jeu[y][x] == marque:
+        if tableau_original[y][x] == mine:
+            ecran.addstr(12,12,'C'était une mine')
+            jeu_termine = True
+        if tableau_original[y][x] == vide:
+            tableau_jeu[y][x] = vide
+            trouve_vide(x,y)
+    elif tableau_jeu[y][x] == libre:
         pass
     else:
-        player_board[y][x] = marked
-        screen.addstr(12,12,'Marked')
+        tableau_jeu[y][x] = marque
+        ecran.addstr(12,12,'Marqué')
     
-def find_clear(x,y):
-    checked = []
+def trouve_vide(x,y):
+    teste = []
     cascade = []
     cascade.append((x,y))
     while len(cascade) != 0:
-        check = cascade.pop(0)
+        test = cascade.pop(0)
         adjacent = 0
-        surrounding = get_surrounding(check[0],check[1])
-        adjacent, no_mines, checked = check_surrounding(surrounding,checked)
-        for square in no_mines:
-            if square not in checked:
-                cascade.append(square)
-        checked.append(check)
+        autour = obtenir_autour(test[0],test[1])
+        adjacent, no_mines, teste = test_autour(autour,teste)
+        for carre in no_mines:
+            if carre not in teste:
+                cascade.append(carre)
+        teste.append(test)
         if adjacent == 0:
-            player_board[check[1]][check[0]] = free
+            tableau_jeu[test[1]][test[0]] = libre
         else:
-            player_board[check[1]][check[0]] = touching
+            tableau_jeu[test[1]][test[0]] = touche
 
-def get_surrounding(x,y):
-    surrounding = []
+def obtenir_autour(x,y):
+    autour = []
     for i in range(x-1,x+1):
         for j in range(y-1,y+1):
             if (i,j) != (x,y):
-                surrounding.append((i,j))
-    return surrounding
+                autour.append((i,j))
+    return autour
 
-def check_surrounding(surrounding,checked):
+def test_autour(autour,teste):
     adjacent = 0
     no_mines = []
-    for square in surrounding:
-        if square not in checked:
-            checked.append(square)
+    for carre in autour:
+        if carre not in teste:
+            teste.append(carre)
         try:
-            if original_board[square[1]][square[0]] == mine:
+            if tableau_original[carre[1]][carre[0]] == mine:
                 adjacent += 1
-            elif original_board[square[1]][square[0]] == clear:
-                no_mines.append(square)
+            elif tableau_original[carre[1]][carre[0]] == vide:
+                no_mines.append(carre)
         except IndexError:
             pass
-    return adjacent, no_mines, checked
+    return adjacent, no_mines, teste
         
 
 
-game_over = False
+jeu_termine = False
 
-while not game_over:
+while not jeu_termine:
 
-    sense.set_pixels(flattened())
+    sense.set_pixels(aplati())
     sense.set_pixel(x,y,0,255,0)
 
-    key = screen.getch()
+    touche = ecran.getch()
     
-    if key == curses.KEY_LEFT:
+    if touche == curses.KEY_LEFT:
         if x > 0:
             x -= 1
 
-    if key == curses.KEY_RIGHT:
+    if touche == curses.KEY_RIGHT:
         if x < 7:
             x += 1
             
-    if key == curses.KEY_UP:
+    if touche == curses.KEY_UP:
         if y > 0:
             y -= 1
 
-    if key == curses.KEY_DOWN:
+    if touche == curses.KEY_DOWN:
         if y < 7:
             y += 1
 
-    if key == ord('\n'):
-        check_position(x,y)
+    if touche == ord('\n'):
+        test_position(x,y)
 
