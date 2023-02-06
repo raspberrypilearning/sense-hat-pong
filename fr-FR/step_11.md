@@ -1,10 +1,10 @@
-## Challenge: add more features
+## Défi: Ajoute plus de fonctionnalités
 
-+ Add a score which increases each time the ball bounces off the bat. Report the score to the player when they lose.
++ Ajoute un score qui augmente à chaque fois que la balle rebondit sur la raquette. Affiche le score au joueur quand il perd.
 
-+ Make the game easier or harder by changing the length of the `sleep` period in the while loop.
++ Rends le jeu plus facile ou plus difficile en modifiant la durée de la période `sleep` dans la boucle while.
 
-+ Give the player three lives: each time they miss the ball, they lose a life and the ball resets. Once all lives are lost, the game ends.
++ Donne trois vies au joueur : chaque fois qu'il manque la balle, il perd une vie et la balle se réinitialise. Une fois que toutes les vies sont perdues, le jeu se termine.
 
-### Hour of Code
-[I've finished my Hour of Code!](https://code.org/api/hour/finish)
+### Heure de Code
+[J'ai terminé mon Heure de Code !](https://code.org/api/hour/finish)
