@@ -1,35 +1,35 @@
-## Light up an LED
+## Allumer une LED
 
-Games often use the coordinates `x` and `y` to determine where an object is on the display. `x` is used to set the horizontal position of an object, and `y` is used to set the vertical position of an object.
+Les jeux utilisent souvent les coordonnées `x` et `y` pour déterminer où un objet se trouve à l'écran. `x` est utilisé pour définir la position horizontale d'un objet et `y` est utilisé pour définir la position verticale d'un objet.
 
-We can do the same with the LEDs on the Sense HAT.
+On peut faire la même chose avec les LEDs sur le Sense HAT.
 
 [[[rpi-sensehat-led-coordinates]]]
 
-Let's start our Pong game by lighting up a single LED to create a ball, and then adding a few more to create a bat.
+Commençons notre jeu de Pong en allumant une seule LED pour créer une balle, puis ajoutons-en quelques autres pour créer une raquette.
 
-+ Open IDLE if you are using a physical Sense HAT, or open a new trinket if you are using the [emulator](http://trinket.io/sense-hat).
++ Si tu utilises un Sense HAT physique, ouvre IDLE, ou bien, ouvre un nouveau Trinket si tu utilises [l'émulateur](http://trinket.io/sense-hat).
 
 [[[rpi-gui-idle-opening]]]
 
-+ Add this code at the start of your file to import the `sense_hat` module and connect to the Sense HAT.
++ Ajoute ce code au début de ton fichier pour importer la librairie `sense_hat` et se connecter au Sense HAT.
 
 ```python
 from sense_hat import SenseHat
 sense = SenseHat()
 ```
 
-+ The bat will be white. Define a variable called `white`, and set its value to `(255, 255, 255)`, which is the RGB colour representation of white.
++ La raquette sera blanche. Définis une variable appelée `blanc`, et définis sa valeur à `(255, 255, 255)`, qui est la représentation RVB de couleur blanche.
 
 [[[rpi-sensehat-display-colour]]]
 
 [[[generic-theory-colours]]]
 
-The bat will always be on the far left-hand column of pixels, so its `x` value will always be `0`, but its `y` value will change as you move the bat up and down.
+La raquette sera toujours sur la colonne de pixels la plus à gauche, donc sa valeur `x` sera toujours `0`, mais sa valeur `y` changera lorsque tu déplaceras la raquette de haut en bas.
 
-+ Create another variable `bat_y` and set its value to `4`.
++ Crée une autre variable `raquette_y` et initialise sa valeur à `4`.
 
-+ Set the LED at the position `(0, bat_y)` to `white` using the `set_pixel` method.
++ Allume la LED à la position `(0, raquette_y)` en `blanc` en utilisant la méthode `set_pixel`.
 
 [[[rpi-sensehat-single-pixel]]]
 
@@ -37,39 +37,39 @@ The bat will always be on the far left-hand column of pixels, so its `x` value w
 
 --- hint ---
 
-First, create a variable with the name `white` and set it equal to `(255, 255, 255)` like this:
+D'abord, crée une variable nommée `blanc` et initialise-la à `(255, 255, 255)` comme ceci :
 
 ```python
-white = (255, 255, 255)
+blanc = (255, 255, 255)
 ```
 
 --- /hint ---
 
 --- hint ---
 
-On the next line, create another variable just like you did for the colour `white`, except this time the name will be `bat_y` and the value will be `4`.
+Sur la ligne suivante, crée une autre variable comme tu l'as fait pour la couleur `blanche`. Cette fois le nom sera `raquette_y` et la valeur sera `4`.
 
 --- /hint ---
 
 --- hint ---
 
-Your finished code should look like this:
+Ton code devrait ressembler à ceci :
 
 ```python
 from sense_hat import SenseHat
 sense = SenseHat()
 
-white = (255, 255, 255)
+blanc = (255, 255, 255)
 
-bat_y = 4
+raquette_y = 4
 
-sense.set_pixel(0, bat_y, white)
+sense.set_pixel(0, raquette_y, blanc)
 ```
 
 --- /hint---
 
 --- /hints ---
 
-+ Save and run your code. A single LED should now be illuminated in white on the left side of the LED matrix.
++ Enregistre et exécute ton code. Une seule LED doit maintenant être allumée en blanc sur le côté gauche de la matrice LED.
 
-![Single LED lit](images/single-led.png)
+![Une seule LED allumée](images/single-led.png)
