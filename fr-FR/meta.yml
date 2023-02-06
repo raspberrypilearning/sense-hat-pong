@@ -1,7 +1,7 @@
 ---
 title: Sense HAT Pong
 hero_image: images/banner.png
-description: Make a single-player Pong game using your Raspberry Pi and Sense HAT
+description: Créer un jeu de Pong à un joueur en utilisant ton Raspberry Pi et Sense HAT
 original_url: https://raspberrypi.org/learning/sense-hat-pong
 theme: blue
 duration: 2
@@ -20,26 +20,26 @@ steps:
   - 
     title: Introduction
   - 
-    title: What you will need
+    title: Ce dont tu auras besoin
   - 
-    title: Connect to the Sense HAT
+    title: Se connecter au Sense HAT
   - 
-    title: Light up an LED
+    title: Allumer une LED
     completion:
-      - engaged
+      - engagé
   - 
-    title: Make a bat
+    title: Créer une raquette
   - 
-    title: Move the bat
+    title: Déplacer la raquette
   - 
-    title: Create a ball
+    title: Créer une balle
   - 
-    title: Move the ball
+    title: Déplacer la balle
   - 
-    title: Collision with the bat
+    title: Collision avec la raquette
   - 
-    title: You lose
+    title: Tu as perdu
     completion:
-      - internal
+      - interne
   - 
-    title: 'Challenge: add more features'
+    title: 'Défi: ajoute plus de fonctionnalités'
