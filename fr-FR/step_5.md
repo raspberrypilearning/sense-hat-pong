@@ -1,71 +1,71 @@
-## Make a bat
+## Créer une raquette
 
-Let's draw the rest of the bat by illuminating the LEDs immediately above and below the one that's currently illuminated. To do this, we will make a **function**.
+Dessinons le reste de la raquette en illuminant les LEDs immédiatement au-dessus et en dessous de celle qui est actuellement allumée. Pour ce faire, nous allons créer une **fonction **.
 
 [[[generic-python-simple-functions]]]
 
-+ **Indent** the line `sense.set_pixel(0, bat_y, white)` by putting your cursor at the start of the line and pressing the **tab** key.
++ **Indente** la ligne `sense.set_pixel(0, raquette_y, blanc)` en plaçant ton curseur au début de la ligne et en appuyant sur la touche **tab**.
 
-+ On the line immediately above this line, start a function called `draw_bat`:
++ Sur la ligne immédiatement au-dessus de cette ligne, crée une fonction appelée `dessine_raquette`:
 
-![Indented part of function](images/indented-in-function.png)
+![Partie indentée de la fonction](images/indented-in-function.png)
 
-The lines following the start of a function are indented to show that they are **inside** the function.
+Les lignes suivant le début d'une fonction sont indentées pour indiquer qu'elles sont **à l'intérieur** de la fonction.
 
-You could add a **comment** just above the start of your function to show that this section will contain your functions — we will be writing some more later on.
+Tu peux ajouter un **commentaire** juste au-dessus du début de ta fonction pour indiquer que cette section contiendra tes fonctions - nous en écrirons d'autres plus tard.
 
 ```python
-# Functions ----------------
+# Fonctions ----------------
 ```
 
-+ Add two more lines of code inside the function to illuminate the LEDs at positions `bat_y + 1`, and `bat_y - 1` as well.
++ Ajoute deux lignes de code supplémentaires à l'intérieur de la fonction pour éclairer les LEDs aux positions `raquette_y + 1` et `raquette_y - 1` également.
 
 --- hints --- --- hint ---
 
-The lines you need are very similar to the one you already have. What do you need to change in this line to make `bat_y + 1` lit instead of `bat_y`?
+Les lignes dont tu as besoin sont très similaires à celles que tu as déjà. Que dois-tu changer dans cette ligne pour que `raquette_y + 1` s'allume au lieu de `raquette_y`?
 
 ```python
-sense.set_pixel(0, bat_y, white)
+sense.set_pixel(0, raquette_y, blanc)
 ```
 
 --- /hint ---
 
 --- hint ---
 
-Don't forget to indent your new lines of code as well so that they are inside the function.
+N'oublie pas d'indenter également tes nouvelles lignes de code afin qu'elles soient à l'intérieur de la fonction.
 
 --- /hint ---
 
 --- hint ---
 
-Here is how your function should look:
+Voici à quoi devrait ressembler ta fonction :
 
 ```python
-# Functions ----------------
-def draw_bat():
-    sense.set_pixel(0, bat_y, white)
-    sense.set_pixel(0, bat_y + 1, white)
-    sense.set_pixel(0, bat_y - 1, white)
+# Fonctions ----------------
+def dessine_raquette():
+    sense.set_pixel(0, raquette_y, blanc)
+    sense.set_pixel(0, raquette_y + 1, blanc)
+    sense.set_pixel(0, raquette_y - 1, blanc)
 ```
 
 --- /hint ---
 
 --- /hints ---
 
-If you run your code now, nothing will happen. The code you just wrote inside the function will not do anything at all until the function is **called**.
+Si tu exécutes ton code maintenant, il ne se passera rien. Le code que tu viens d'écrire dans la fonction ne fera rien tant que la fonction ne sera pas **appelée**.
 
-+ Add a new comment underneath the function to show that this section is where the main program starts. Make sure this comment is **not indented**.
-
-```python
-# Main program -------------
-```
-
-+ Add this line of code in the main program section to call the function:
++ Ajoute un nouveau commentaire sous la fonction pour indiquer que cette section est l'endroit où le programme principal commence. Assure-toi que ce commentaire n'est **pas indenté**.
 
 ```python
-draw_bat()
+# Programme principal -------------
 ```
 
-+ Run the code and check that three LEDs are now illuminated.
++ Ajoute cette ligne de code dans la section principale du programme pour appeler la fonction :
 
-![Three LEDs](images/three-leds.png)
+```python
+dessine_raquette()
+```
+
++ Exécute le code et vérifie que trois LEDs sont maintenant allumées.
+
+![Trois LEDs](images/three-leds.png)
