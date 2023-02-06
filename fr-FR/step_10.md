@@ -1,25 +1,25 @@
-## You lose
+## Tu as perdu
 
-If you miss the ball with the bat, at the moment it bounces off the far left wall. Let's change the code so that if the player misses the ball, they lose the game.
+Si tu manques la balle avec la raquette, pour le moment, elle rebondit sur le mur de gauche. Modifions le code pour que, si le joueur rate la balle, il perde la partie.
 
-+ Add another if statement at the end of your `draw_ball` function to check whether the ball's `x` position equals `0`, which would mean the ball has reached the far end of the screen.
++ Ajoute une autre instruction if à la fin de ta fonction `dessine_balle` pour vérifier si la position `x` de la balle est égale à `0`, ce qui signifierait que la balle a atteint le bord de l'écran.
 
-+ If this condition is true, display the message "You lose".
++ Si cette condition est vraie, affiche le message "Tu as perdu".
 
 --- hints --- --- hint ---
 
-Your new if statement will look very similar to the conditions you have already written. Add it here:
+Ta nouvelle instruction if sera très similaire aux conditions que tu as déjà écrites. Ajoute-la ici :
 
-![You lose](images/lose-hint-add-code.png)
+![Tu as perdu](images/lose-hint-add-code.png)
 
 --- /hint ---
 
 --- hint ---
 
-Here is how your code should look. The part to add is highlighted in blue:
+Voici à quoi devrait ressembler ton code . La partie à ajouter est surlignée en bleu:
 
-![You lose](images/you-lose-hint-solution.png)
+![Tu as perdu](images/you-lose-hint-solution.png)
 
 --- /hint --- --- /hints ---
 
-+ Save and run your code. Check that, if you miss the ball, the message "You lose" appears. The game will restart after the message has been displayed.
++ Enregistre et exécute ton code. Vérifie que, si tu manques la balle, le message "Tu as perdu" apparaît. Le jeu redémarrera une fois le message affiché.
