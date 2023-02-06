@@ -1,9 +1,9 @@
-## Connect to the Sense HAT
+## Se connecter au Sense HAT
 
-+ If you have a Sense HAT, attach it to your Raspberry Pi.
++ Si tu as un Sense HAT, installe-le sur ton Raspberry Pi.
 
 [[[rpi-sensehat-attach]]]
 
-+ If you do not have a Sense HAT, you can create the project using the Sense HAT emulator.
++ Si tu n'as pas de Sense HAT, tu peux créer le projet en utilisant l'émulateur Sense HAT.
 
 [[[rpi-sensehat-emulator]]]
