@@ -1,52 +1,52 @@
-## Collision with the bat
+## Collision avec la raquette
 
-Now that the ball bounces in both directions, let's make it bounce off the bat.
+Maintenant que la balle rebondit dans les deux sens, faisons-la rebondir sur la raquette.
 
-The bat is always situated in the far left column of the LED grid, so its `x` coordinate is always `0`.
+La raquette est toujours située dans la colonne la plus à gauche de la grille LED, donc sa coordonnée `x` est toujours `0`.
 
-The ball will bounce off the bat if it is in the row next to the bat — that is, if the ball's `x` position is equal to `1`.
+La balle rebondira sur la raquette si elle se trouve dans la rangée à côté de la raquette, c'est-à-dire si la position `x` de la balle est égale à `1`.
 
-![Ball bounce x](images/ball-bounce-x.png)
+![Balle rebondit x](images/ball-bounce-x.png)
 
-+ Add this code to the end of the `draw_ball` function:
++ Ajoute ce code à la fin de la fonction `dessine_balle` :
 
 ``` python
-if ball_position[0] == 1:
-    ball_velocity[0] = -ball_velocity[0]
+if balle_position[0] == 1:
+    balle_vitesse[0] = -balle_vitesse[0]
 ```
 
-This code will cause the ball to reverse direction if it reaches an `x` coordinate of `1`. But now the ball reverses regardless of whether the bat is there or not!
+Ce code fera inverser la direction de la balle si elle atteint une coordonnée `x` de `1`. Mais maintenant, la balle s'inverse, que la raquette soit là ou non !
 
-- Add to the condition to require the ball's `y` position to also (**and**) be anywhere between the top and bottom of the bat.
+- Ajoute à la condition d'exiger que la position `y` de la balle soit aussi (**and**) n'importe où entre le haut et le bas de la raquette.
 
-Remember that the bat is made up of three pixels. So for the ball to 'bounce off' the bat, the `y` coordinate of the ball can be anywhere **between** the top of the bat (`bat_y - 1`) and the bottom of the bat (`bat_y + 1`).
+N'oublie pas que la raquette est composée de trois pixels. Donc, pour que la balle "rebondisse" sur la raquette, la coordonnée `y` de la balle peut être n'importe où **entre** le haut de la raquette (`raquette_y - 1`) et le bas de la raquette (`raquette_y + 1`).
 
 --- hints --- --- hint ---
 
-Add your extra condition at the location highlighted blue:
+Ajoute la condition supplémentaire à l'emplacement surligné en bleu :
 
-![Has it hit the bat?](images/hint-add-hit-bat.png)
+![A-t-elle touché la raquette?](images/hint-add-hit-bat.png)
 
 --- /hint ---
 
 --- hint ---
 
-To check whether a value is between two values, we can write a condition like this:
+Pour vérifier si une valeur est entre deux valeurs, on peut écrire une condition comme celle-ci :
 
 ```python
 1 <= x <= 10
 ```
 
-This condition checks whether `x` is between `1` and `10` (inclusive) by asking first whether `1` is less than or equal to `x`, and then whether `x` is less than or equal to `10`. Use a similar line of code to determine whether your ball's `y` coordinate is between `bat_y - 1` and `bat_y + 1`.
+Cette condition vérifie si `x` est compris entre `1` et `10` (inclus) en demandant d'abord si `1` est inférieur ou égal à `x`, puis si `x` est inférieur ou égal à `10`. Utilise une ligne de code similaire pour déterminer si la coordonnée `y` de la balle est comprise entre `raquette_y - 1` et `raquette_y + 1`.
 
 --- /hint --- --- hint ---
 
-Here is how your finished code should look. The bit you should add is highlighted in blue:
+Voici à quoi devrait ressembler ton code . La partie à ajouter est surlignée en bleu:
 
-![Has it hit the bat?](images/hint-add-hit-bat-solution.png)
+![A-t-elle touché la raquette?](images/hint-add-hit-bat-solution.png)
 
 --- /hint ---
 
 --- /hints ---
 
-+ Save and run your code. Check that the ball bounces off the bat only when the bat is in the correct position!
++ Enregistre et exécute ton code. Vérifie que la balle rebondit sur la raquette uniquement lorsque la raquette est dans la bonne position !
