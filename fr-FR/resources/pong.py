@@ -4,83 +4,83 @@ import threading
 from time import sleep
 
 
-##Set up the Sense HAT
+##Configuer le Sense HAT
 sense = SenseHat()
 sense.clear(0,0,0)
 
-## Set up curses
-screen = curses.initscr()
-screen.keypad(True)
+## Configurer curses
+ecran = curses.initscr()
+ecran.keypad(True)
 curses.cbreak()
 curses.noecho()
 
-##initialise bat position
+##Initialise la position de la batte
 y = 4
 
-##initialise ball position
-ball_position = [6,3]
-ball_speed = [-1,-1]
+##Initialise la position de la balle
+balle_position = [6,3]
+balle_vitesse = [-1,-1]
 
 
 
-def drawbat():
-    '''Draw the bat about y'''
+def dessineraquette():
+    '''Dessine la raquette en y'''
     sense.set_pixel(0,y,255,255,255)
     sense.set_pixel(0,y+1,255,255,255)
     sense.set_pixel(0,y-1,255,255,255)
 
-def moveball():
-    '''Move and draw the ball'''
-    global game_over
+def deplaceballe():
+    '''Deplace et dessine la balle'''
+    global jeu_termine
 
     while True:
         
         sleep(0.1)
 
-        sense.set_pixel(ball_position[0],ball_position[1],0,0,0)
+        sense.set_pixel(balle_position[0],balle_position[1],0,0,0)
 
-        ball_position[0] += ball_speed[0]
-        ball_position[1] += ball_speed[1]
+        balle_position[0] += balle_vitesse[0]
+        balle_position[1] += balle_vitesse[1]
 
-        if ball_position[0] == 7:
-            ball_speed[0] = -ball_speed[0]
+        if balle_position[0] == 7:
+            balle_vitesse[0] = -balle_vitesse[0]
 
-        if ball_position[1] == 0 or ball_position[1] == 7:
-            ball_speed[1] = -ball_speed[1]
+        if balle_position[1] == 0 or balle_position[1] == 7:
+            balle_vitesse[1] = -balle_vitesse[1]
 
-        if ball_position[0] == 1 and y-1 <= ball_position[1] <= y+1:
-            ball_speed[0] = -ball_speed[0]
+        if balle_position[0] == 1 and y-1 <= balle_position[1] <= y+1:
+            balle_vitesse[0] = -balle_vitesse[0]
 
-        if ball_position[0] == 0:
+        if balle_position[0] == 0:
             break
 
-        sense.set_pixel(ball_position[0],ball_position[1],0,0,255)
+        sense.set_pixel(balle_position[0],balle_position[1],0,0,255)
 
-    game_over = True
+    jeu_termine = True
 
 
-game_over = False
+jeu_termine = False
 
-thread = threading.Thread(target=moveball)
+thread = threading.Thread(target=deplaceballe)
 thread.start()
 
-while not game_over:
-    drawbat()
-    key = screen.getch()
+while not jeu_termine:
+    dessineraquette()
+    touche = ecran.getch()
     sense.clear()
 
-    if key == curses.KEY_UP:
+    if touche == curses.KEY_UP:
         if y > 1:
             y -= 1
 
-    if key == curses.KEY_DOWN:
+    if touche == curses.KEY_DOWN:
         if y < 6:
             y += 1
 
-sense.show_message("You Lose", text_colour=(255,0,0))
+sense.show_message("Perdu!", text_colour=(255,0,0))
 
-##Clean up curses
-screen.keypad(0)
+##Nettoyer curses
+ecran.keypad(0)
 curses.nocbreak()
 curses.echo()
 curses.endwin()
