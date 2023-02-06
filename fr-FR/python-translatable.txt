@@ -1,11 +1,11 @@
-white
+blanc
 
-bat_y
+raquette_y
 
-draw_bat
+dessine_raquette
 
-ball_position
+position_balle
 
-ball_velocity
+vitesse_balle
 
-draw_ball
+dessine_balle
