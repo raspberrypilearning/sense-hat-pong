@@ -1,50 +1,50 @@
-## Create a ball
+## Créer une balle
 
-The next step is to create the ball. But first, a little maths!
+L'étape suivante consiste à créer la balle. Mais avant, un peu de maths !
 
-A ball moving in two dimensions has two essential properties you need to consider:
+Une balle se déplaçant en deux dimensions a deux propriétés essentielles que tu dois considérer :
 
-**Position** - like the bat, the ball has a vertical and horizontal coordinate on the grid.
+**Position** - comme la raquette, la balle a une coordonnée verticale et horizontale sur la grille.
 
-**Velocity** - the speed of the ball in a straight line. This can also be described by two numbers: how fast it's moving in the `x` dimension, and how fast it's moving in the `y` dimension.
+**Vitesse** - la vitesse de la balle en ligne droite. Cela peut également être décrit par deux nombres : la vitesse à laquelle elle se déplace dans la dimension `x` et la vitesse à laquelle elle se déplace dans la dimension `y`.
 
-+ Locate the `bat_y` variable in your program and, below it, add two lists to describe the ball's properties:
-
-``` python
-ball_position = [3, 3]
-ball_velocity = [1, 1]
-```
-
-+ Choose a colour for your ball and, below your `white` variable, define a variable with your chosen colour value. We have used  `(0, 0, 255)`, which is blue.
-
-+ In your functions section, create a function called `draw_ball`:
++ Localise la variable `raquette_y` dans ton programme et, au-dessous, ajoute deux listes pour décrire les propriétés de la balle :
 
 ``` python
-def draw_ball():
+balle_position = [3, 3]
+balle_vitesse = [1, 1]
 ```
 
-+ Add a line of code to the `draw_ball` function to illuminate an LED at the `ball_position`.
++ Choisis une couleur pour ta balle et, sous ta variable `blanc`, définis une variable avec la valeur de la couleur choisie. Nous avons utilisé  `(0, 0, 255)`, ce qui correspond au bleu.
+
++ Dans la section des fonctions, crée une fonction appelée `dessine_balle`:
+
+``` python
+def dessine_balle():
+```
+
++ Ajoute une ligne de code à la fonction `dessine_balle` pour allumer une LED à la `balle_position`.
 
 [[[generic-python-list-index]]]
 
 --- hints --- --- hint ---
 
-The position on the `x` axis will be the zeroth item in the `ball_position` list. The `y` position will be the first item in the `ball_position` list.
+La position sur l'axe `x` sera l'élément zéro de la liste `balle_position`. La position `y` sera le premier élément de la liste `balle_position`.
 
 --- /hint ---
 
 --- hint ---
 
-Here is how your code should look (assuming you also chose the colour blue for your ball):
+Voici à quoi devrait ressembler ton code (en supposant que tu aies également choisi la couleur bleue pour ta balle) :
 ``` python
-def draw_ball():
-    sense.set_pixel(ball_position[0], ball_position[1], blue)
+def dessine_balle():
+    sense.set_pixel(balle_position[0], balle_position[1], bleu)
 ```
 
 --- /hint --- --- /hints ---
 
-+ In your `while` loop, call the function `draw_ball`.
++ Dans ta boucle `while`, appelle la fonction `dessine_balle`.
 
-+ Save and run your code, and check that the ball is displayed on the LED matrix.
++ Enregistre et exécute ton code et vérifie que la balle est affichée sur la matrice LED.
 
-![Draw the ball](images/draw-ball.png)
+![Dessine la balle](images/draw-ball.png)
